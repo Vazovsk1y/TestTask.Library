@@ -16,6 +16,10 @@ public class Book : Entity<BookId>
 
 	public Author Author { get; set; }
 
+	public BookHireInfoId? BookHireInfoId { get; set; }
+
+	public BookHireInfo? BookHireInfo { get; set; }
+
 	public Book() : base() { }
 }
 
