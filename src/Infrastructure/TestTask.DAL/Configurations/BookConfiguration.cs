@@ -10,6 +10,8 @@ internal class BookConfiguration : IEntityTypeConfiguration<Book>
 	{
 		builder.ConfigureId<Book, BookId>();
 
+		builder.HasIndex(e => e.ISBN).IsUnique();
+
 		builder
 			.HasMany(e => e.Genres)
 			.WithOne(e => e.Book)

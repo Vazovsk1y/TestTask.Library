@@ -10,6 +10,8 @@ internal class GenreConfiguration : IEntityTypeConfiguration<Genre>
 	{
 		builder.ConfigureId<Genre, GenreId>();
 
+		builder.HasIndex(e => e.Title).IsUnique();
+
 		builder
 			.HasMany(e => e.Books)
 			.WithOne(e => e.Genre)

@@ -10,6 +10,8 @@ internal class AuthorConfiguration : IEntityTypeConfiguration<Author>
 	{
 		builder.ConfigureId<Author, AuthorId>();
 
+		builder.HasIndex(e => e.FullName).IsUnique();
+
 		builder
 			.HasMany(e => e.Books)
 			.WithOne(e => e.Author)
