@@ -2,7 +2,7 @@
 
 namespace TestTask.Application.Shared;
 
-public record BookDTO(BookId Id, string Title, string ISBN, string? Description, AuthorInfo AuthorInfo, IReadOnlyCollection<Genre> Genres);
+public record BookDTO(BookId Id, string Title, string ISBN, string? Description, AuthorInfo AuthorInfo, IReadOnlyCollection<GenreInfo> Genres);
 
 public record AuthorInfo(AuthorId AuthorId, string FullName);
 
