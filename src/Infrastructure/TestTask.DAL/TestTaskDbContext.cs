@@ -14,7 +14,7 @@ public class TestTaskDbContext : DbContext
 
 	public DbSet<BookGenre> BooksGenres { get; set; }
 
-	public DbSet<BookHireCard> BooksHiresInfos { get; set; }
+	public DbSet<BooksHireCard> BooksHiresInfos { get; set; }
 
 	public DbSet<BookHireItem> BookHireItems { get; set; }
 

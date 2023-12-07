@@ -3,7 +3,7 @@
 #nullable disable
 public class BookHireItem
 {
-	public required BookHireCardId BookHireCardId { get; set; }
+	public required BooksHireCardId BookHireCardId { get; set; }
 
 	public required BookId BookId { get; set; }
 
@@ -13,7 +13,7 @@ public class BookHireItem
 
 	public DateTimeOffset? BookReturnDate { get; set; }
 
-	public BookHireCard BookHireCard { get; set; }
+	public BooksHireCard BookHireCard { get; set; }
 
 	public Book Book { get; set; }	
 }
