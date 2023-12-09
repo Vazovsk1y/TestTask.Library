@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TestTask.DAL;
 using TestTask.Application.Implementations;
+using TestTest.WebApi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,10 +12,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationLayer();
 builder.Services.AddDataAccessLayer(builder.Configuration);
+builder.Services.AddTransient<ExceptionsHandlingMiddleware>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+app.UseMiddleware<ExceptionsHandlingMiddleware>();
+
 app.UseSwagger();
 app.UseSwaggerUI();
 
