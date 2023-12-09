@@ -31,7 +31,13 @@ internal class BookService : IBookService
 
 	public async Task<Response<BookDTO>> GetByIdAsync(BookId bookId, CancellationToken cancellationToken = default)
 	{
-		var book = await _dbContext.Books.SingleOrDefaultAsync(e => e.Id == bookId, cancellationToken);
+		var book = await _dbContext
+			.Books
+			.Include(e => e.Author)
+			.Include(e => e.Genres)
+			.ThenInclude(e => e.Genre)
+			.SingleOrDefaultAsync(e => e.Id == bookId, cancellationToken);
+
 		if (book is null)
 		{
 			return Response.Failure<BookDTO>(Errors.EntityWithPassedIdIsNotExists(nameof(Book)));
@@ -42,7 +48,12 @@ internal class BookService : IBookService
 
 	public async Task<Response<BookDTO>> GetByISBNAsync(string isbn, CancellationToken cancellationToken = default)
 	{
-		var book = await _dbContext.Books.SingleOrDefaultAsync(e => e.ISBN == isbn, cancellationToken);
+		var book = await _dbContext
+			.Books
+			.Include(e => e.Author)
+			.Include(e => e.Genres)
+			.ThenInclude(e => e.Genre)
+			.SingleOrDefaultAsync(e => e.ISBN == isbn, cancellationToken);
 		if (book is null)
 		{
 			return Response.Failure<BookDTO>(Errors.Book.BookWithPassedISBNIsNotExists);
