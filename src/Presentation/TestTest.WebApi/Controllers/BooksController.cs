@@ -106,7 +106,8 @@ public class BookCreateModel
 
 	[Required]
 	[NotEmptyGuid]
-	[OnlyUniqueValues<Guid>]
+	[OnlyUniqueValuesOf<Guid>]
+	[NotEmptyCollectionOf<Guid>]
 	public IEnumerable<Guid> Genres { get; set; } = null!;
 
 	public string? Description { get; set; }
@@ -131,7 +132,8 @@ public class BookUpdateModel
 
 	[Required]
 	[NotEmptyGuid]
-	[OnlyUniqueValues<Guid>]
+	[OnlyUniqueValuesOf<Guid>]
+	[NotEmptyCollectionOf<Guid>]
 	public IEnumerable<Guid> Genres { get; set; } = null!;
 
 	public string? Description { get; set; }

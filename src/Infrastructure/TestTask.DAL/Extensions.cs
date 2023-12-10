@@ -163,7 +163,7 @@ public static class DataSeeder
 		var bookGenres = new List<BookGenre>();
 		foreach (var book in books)
 		{
-			for (int i = 0; i < random.Next(0, 5); )
+			for (int i = 0; i < random.Next(1, 5); )
 			{
 				var bookGenre = new BookGenre 
 				{ 

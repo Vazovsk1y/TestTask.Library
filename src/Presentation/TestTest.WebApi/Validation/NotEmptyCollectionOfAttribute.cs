@@ -2,14 +2,13 @@
 
 namespace TestTest.WebApi.Validation;
 
-public class OnlyUniqueValuesAttribute<TEntity> : ValidationAttribute
+public class NotEmptyCollectionOfAttribute<TEntity> : ValidationAttribute
 {
 	protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
 	{
 		if (value is IEnumerable<TEntity> entities)
 		{
-			var hashSet = new HashSet<TEntity>(entities);
-			return hashSet.Count == entities.Count() ? ValidationResult.Success : new ValidationResult($"{validationContext.MemberName} contains duplicates.");
+			return !entities.Any() ? new ValidationResult($"{validationContext.MemberName} was empty.") : ValidationResult.Success; 
 		}
 
 		return ValidationResult.Success;
