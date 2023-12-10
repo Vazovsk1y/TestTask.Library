@@ -62,6 +62,39 @@ internal class BookService : IBookService
 		return book.ToDTO();
 	}
 
+	public async Task<Response<BookId>> SaveAsync(BookAddDTO addDTO, CancellationToken cancellationToken = default)
+	{
+		if (!await _dbContext.Authors.AnyAsync(e => e.Id == addDTO.AuthorId, cancellationToken))
+		{
+			return Response.Failure<BookId>(Errors.Author.AuthorWithPassedIdIsNotExists);
+		}
+
+		if (await _dbContext.Books.AnyAsync(e => e.ISBN == addDTO.ISBN, cancellationToken))
+		{
+			return Response.Failure<BookId>(Errors.Book.BookWithPassedISBNIsAlreadyExists);
+		}
+
+		var absentGenres = addDTO.Genres.Except(await _dbContext.Genres.Where(e => addDTO.Genres.Contains(e.Id)).Select(e => e.Id).ToListAsync(cancellationToken));
+        if (absentGenres.Any())
+        {
+			return Response.Failure<BookId>($"Genres with [{string.Join(",", absentGenres.Select(e => e.Value))}] ids is not exists.");
+        }
+
+        var book = new Book
+		{
+			AuthorId = addDTO.AuthorId,
+			Title = addDTO.Title,
+			Description = addDTO.Description,
+			ISBN = addDTO.ISBN,
+		};
+
+		book.Genres = addDTO.Genres.Select(e => new BookGenre { BookId = book.Id, GenreId = e }).ToList();
+
+		_dbContext.Books.Add(book);
+		await _dbContext.SaveChangesAsync(cancellationToken);
+		return book.Id;
+    }
+
 	public Task<Response> DeleteAsync(BookId bookId, CancellationToken cancellationToken = default)
 	{
 		throw new NotImplementedException();
@@ -73,11 +106,6 @@ internal class BookService : IBookService
 	}
 
 	public Task<Response> ReturnBooksAsync(BooksReturnDTO booksReturnDTO, CancellationToken cancellationToken = default)
-	{
-		throw new NotImplementedException();
-	}
-
-	public Task<Response<BookId>> SaveAsync(BookAddDTO addDTO, CancellationToken cancellationToken = default)
 	{
 		throw new NotImplementedException();
 	}

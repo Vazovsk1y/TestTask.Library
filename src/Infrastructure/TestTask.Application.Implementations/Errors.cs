@@ -9,5 +9,12 @@ internal static class Errors
 	internal static class Book
 	{
 		public const string BookWithPassedISBNIsNotExists = "Book with passed isnb is not exists.";
+
+		public const string BookWithPassedISBNIsAlreadyExists = "Book with passed isbn is already exists.";
 	}
+
+    internal static class Author
+    {
+		public const string AuthorWithPassedIdIsNotExists = "Author with passed id is not exists.";
+    }
 }
