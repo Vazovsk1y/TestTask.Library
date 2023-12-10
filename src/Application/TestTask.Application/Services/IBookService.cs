@@ -16,8 +16,4 @@ public interface IBookService
 	Task<Response> DeleteAsync(BookId bookId, CancellationToken cancellationToken = default);
 
 	Task<Response> UpdateAsync(BookUpdateDTO updateDTO, CancellationToken cancellationToken = default);
-
-	Task<Response> HireBooksAsync(BooksHireDTO hireDTO, CancellationToken cancellationToken = default);
-
-	Task<Response> ReturnBooksAsync(BooksReturnDTO booksReturnDTO, CancellationToken cancellationToken = default);
 }

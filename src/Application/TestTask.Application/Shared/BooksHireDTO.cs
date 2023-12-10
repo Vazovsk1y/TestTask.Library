@@ -2,6 +2,6 @@
 
 namespace TestTask.Application.Shared;
 
-public record BooksHireDTO(IEnumerable<HiredBookDTO> Books, DateTimeOffset BooksHiredDate);
+public record BooksHireDTO(IEnumerable<BookToHireDTO> Books, DateTimeOffset BooksHiredDate);
 
-public record HiredBookDTO(BookId BookId, DateTimeOffset BookHireExpiryDate);
+public record BookToHireDTO(BookId BookId, TimeSpan HireDuration);

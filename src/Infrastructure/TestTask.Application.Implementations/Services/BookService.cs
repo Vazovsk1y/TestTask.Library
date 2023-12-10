@@ -141,16 +141,4 @@ internal class BookService : IBookService
 		await _dbContext.SaveChangesAsync(cancellationToken);
 		return Response.Success();
 	}
-
-	public Task<Response> HireBooksAsync(BooksHireDTO hireDTO, CancellationToken cancellationToken = default)
-	{
-		throw new NotImplementedException();
-	}
-
-	public Task<Response> ReturnBooksAsync(BooksReturnDTO booksReturnDTO, CancellationToken cancellationToken = default)
-	{
-		throw new NotImplementedException();
-	}
-
-	
 }
