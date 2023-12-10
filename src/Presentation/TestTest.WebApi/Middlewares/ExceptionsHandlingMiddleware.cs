@@ -19,11 +19,11 @@ public class ExceptionsHandlingMiddleware : IMiddleware
 		catch (Exception ex)
 		{
 			_logger.LogError(ex, nameof(HttpStatusCode.InternalServerError));
-			await HandleExeptionAsync(context, HttpStatusCode.InternalServerError);
+			await HandleExeptionAsync(context, ex, HttpStatusCode.InternalServerError);
 		}
 	}
 
-	private static async Task HandleExeptionAsync(HttpContext context, HttpStatusCode httpStatusCode)
+	private static async Task HandleExeptionAsync(HttpContext context, Exception exception, HttpStatusCode httpStatusCode)
 	{
 		HttpResponse response = context.Response;
 		response.ContentType = "application/json";
@@ -33,7 +33,7 @@ public class ExceptionsHandlingMiddleware : IMiddleware
 		{
 			Status = (int)httpStatusCode,
 			Title = nameof(HttpStatusCode.InternalServerError),
-			Type = nameof(HttpStatusCode.InternalServerError),
+			Type = exception.GetType().Name,
 			Detail = "An error occurred while processing the http request."
 		};
 

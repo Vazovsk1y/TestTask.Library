@@ -66,7 +66,7 @@ internal class BookService : IBookService
 	{
 		if (!await _dbContext.Authors.AnyAsync(e => e.Id == addDTO.AuthorId, cancellationToken))
 		{
-			return Response.Failure<BookId>(Errors.Author.AuthorWithPassedIdIsNotExists);
+			return Response.Failure<BookId>(Errors.EntityWithPassedIdIsNotExists(nameof(Author)));
 		}
 
 		if (await _dbContext.Books.AnyAsync(e => e.ISBN == addDTO.ISBN, cancellationToken))
@@ -95,6 +95,40 @@ internal class BookService : IBookService
 		return book.Id;
     }
 
+	public async Task<Response> UpdateAsync(BookUpdateDTO updateDTO, CancellationToken cancellationToken = default)
+	{
+		var book = await _dbContext.Books.Include(e => e.Genres).SingleOrDefaultAsync(e => e.Id == updateDTO.BookId, cancellationToken);
+		if (book is null)
+		{
+			return Response.Failure(Errors.EntityWithPassedIdIsNotExists(nameof(Book)));
+		}
+
+		if (!await _dbContext.Authors.AnyAsync(e => e.Id == updateDTO.AuthorId, cancellationToken))
+		{
+			return Response.Failure(Errors.EntityWithPassedIdIsNotExists(nameof(Author)));
+		}
+
+		if (await _dbContext.Books.AnyAsync(e => e.ISBN == updateDTO.ISBN && e.Id != updateDTO.BookId, cancellationToken))
+		{
+			return Response.Failure<BookId>(Errors.Book.BookWithPassedISBNIsAlreadyExists);
+		}
+
+		var absentGenres = updateDTO.Genres.Except(await _dbContext.Genres.Where(e => updateDTO.Genres.Contains(e.Id)).Select(e => e.Id).ToListAsync(cancellationToken));
+		if (absentGenres.Any())
+		{
+			return Response.Failure<BookId>($"Genres with [{string.Join(",", absentGenres.Select(e => e.Value))}] ids is not exists.");
+		}
+
+		book.Title = updateDTO.Title;
+		book.Description = updateDTO.Description;
+		book.AuthorId = updateDTO.AuthorId;
+		book.ISBN = updateDTO.ISBN;
+		book.Genres = updateDTO.Genres.Select(e => new BookGenre { BookId = book.Id, GenreId = e }).ToList();
+
+		await _dbContext.SaveChangesAsync(cancellationToken);
+		return Response.Success();
+	}
+
 	public Task<Response> DeleteAsync(BookId bookId, CancellationToken cancellationToken = default)
 	{
 		throw new NotImplementedException();
@@ -110,8 +144,5 @@ internal class BookService : IBookService
 		throw new NotImplementedException();
 	}
 
-	public Task<Response> UpdateAsync(BookUpdateDTO updateDTO, CancellationToken cancellationToken = default)
-	{
-		throw new NotImplementedException();
-	}
+	
 }

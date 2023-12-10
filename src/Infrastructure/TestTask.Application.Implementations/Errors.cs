@@ -12,9 +12,4 @@ internal static class Errors
 
 		public const string BookWithPassedISBNIsAlreadyExists = "Book with passed isbn is already exists.";
 	}
-
-    internal static class Author
-    {
-		public const string AuthorWithPassedIdIsNotExists = "Author with passed id is not exists.";
-    }
 }

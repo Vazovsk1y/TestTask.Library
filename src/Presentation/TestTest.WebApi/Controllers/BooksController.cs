@@ -63,6 +63,18 @@ public class BooksController : BaseController
 
 		return BadRequest(result.ErrorMessage);
 	}
+
+	[HttpPut]
+	public async Task<IActionResult> UpdateBook(BookUpdateModel book)
+	{
+		var result = await _bookService.UpdateAsync(new BookUpdateDTO(new BookId(book.BookId), book.Title, book.ISBN, new AuthorId(book.AuthorId), book.Genres.Select(e => new GenreId(e)), book.Description));
+		if (result.IsSuccess)
+		{
+			return Ok($"Book with [{book.BookId}] id successfully updated.");
+		}
+
+		return BadRequest(result.ErrorMessage);
+	}
 }
 
 public class BookCreateModel
@@ -74,6 +86,27 @@ public class BookCreateModel
 
 	[Required]
 	[RegularExpression(ISBNpattern, ErrorMessage = "Incorrect ISBN format.")]
+	public string ISBN { get; set; } = null!;
+
+	[Required]
+	public Guid AuthorId { get; set; }
+
+	[Required]
+	public IEnumerable<Guid> Genres { get; set; } = null!;
+
+	public string? Description { get; set; }
+}
+
+public class BookUpdateModel
+{
+	[Required]
+	public Guid BookId { get; set; }
+
+	[Required]
+	public string Title { get; set; } = null!;
+
+	[Required]
+	[RegularExpression(BookCreateModel.ISBNpattern, ErrorMessage = "Incorrect ISBN format.")]
 	public string ISBN { get; set; } = null!;
 
 	[Required]
