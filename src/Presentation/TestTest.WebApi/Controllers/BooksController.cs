@@ -28,7 +28,7 @@ public class BooksController : BaseController
 	}
 
 	[HttpGet("{id}")]
-	public async Task<IActionResult> GetBookById(Guid id)
+	public async Task<IActionResult> GetBookById([NotEmptyGuid] Guid id)
 	{
 		var result = await _bookService.GetByIdAsync(new BookId(id));
 		if (result.IsSuccess)
@@ -41,7 +41,7 @@ public class BooksController : BaseController
 
 
 	[HttpGet("byISBN/{isbn}")]
-	public async Task<IActionResult> GetBookByISBN([RegularExpression(BookCreateModel.ISBNpattern, ErrorMessage = "Incorrect ISBN format.")] string isbn)
+	public async Task<IActionResult> GetBookByISBN([ISBN] string isbn)
 	{
 		var result = await _bookService.GetByISBNAsync(isbn);
 		if (result.IsSuccess)
@@ -58,7 +58,7 @@ public class BooksController : BaseController
 		var result = await _bookService.SaveAsync(new BookAddDTO(book.Title, book.ISBN, new AuthorId(book.AuthorId), book.Genres.Select(e => new GenreId(e)), book.Description));
 		if (result.IsSuccess)
 		{
-			return Ok($"Book id is [{result.Value.Value}].");
+			return Ok($"Book with [{result.Value.Value}] id was successfully created.");
 		}
 
 		return BadRequest(result.ErrorMessage);
@@ -85,13 +85,16 @@ public class BookCreateModel
 	public string Title { get; set; } = null!;
 
 	[Required]
-	[RegularExpression(ISBNpattern, ErrorMessage = "Incorrect ISBN format.")]
+	[ISBN]
 	public string ISBN { get; set; } = null!;
 
 	[Required]
+	[NotEmptyGuid]
 	public Guid AuthorId { get; set; }
 
 	[Required]
+	[NotEmptyGuid]
+	[OnlyUniqueValues<Guid>]
 	public IEnumerable<Guid> Genres { get; set; } = null!;
 
 	public string? Description { get; set; }
@@ -100,19 +103,23 @@ public class BookCreateModel
 public class BookUpdateModel
 {
 	[Required]
+	[NotEmptyGuid]
 	public Guid BookId { get; set; }
 
 	[Required]
 	public string Title { get; set; } = null!;
 
 	[Required]
-	[RegularExpression(BookCreateModel.ISBNpattern, ErrorMessage = "Incorrect ISBN format.")]
+	[ISBN]
 	public string ISBN { get; set; } = null!;
 
 	[Required]
+	[NotEmptyGuid]
 	public Guid AuthorId { get; set; }
 
 	[Required]
+	[NotEmptyGuid]
+	[OnlyUniqueValues<Guid>]
 	public IEnumerable<Guid> Genres { get; set; } = null!;
 
 	public string? Description { get; set; }
