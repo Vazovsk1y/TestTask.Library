@@ -4,11 +4,11 @@ using TestTask.Domain.Entities;
 
 namespace TestTask.DAL.Configurations;
 
-internal class BookHireCardConfiguration : IEntityTypeConfiguration<BooksHireCard>
+internal class BookHireRecordConfiguration : IEntityTypeConfiguration<BooksHireRecord>
 {
-	public void Configure(EntityTypeBuilder<BooksHireCard> builder)
+	public void Configure(EntityTypeBuilder<BooksHireRecord> builder)
 	{
-		builder.ConfigureId<BooksHireCard, BooksHireCardId>();
+		builder.ConfigureId<BooksHireRecord, BooksHireRecordId>();
 
 		builder
 			.HasMany(e => e.Books)
