@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using TestTask.Application.Services;
 using TestTask.Application.Shared;
 using TestTask.Domain.Entities;
+using TestTest.WebApi.Validation;
 
 namespace TestTest.WebApi.Controllers;
 
@@ -75,12 +76,23 @@ public class BooksController : BaseController
 
 		return BadRequest(result.ErrorMessage);
 	}
+
+
+	[HttpDelete("{id}")]
+	public async Task<IActionResult> DeleteBook([NotEmptyGuid] Guid id)
+	{
+		var result = await _bookService.DeleteAsync(new BookId(id));
+		if (result.IsSuccess)
+		{
+			return Ok($"Book with [{id}] was successfully deleted.");
+		}
+
+		return NotFound(result.ErrorMessage);
+	}
 }
 
 public class BookCreateModel
 {
-	public const string ISBNpattern = @"^(?=[0-9]{13}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)97[89][- ]?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9]$";
-
 	[Required]
 	public string Title { get; set; } = null!;
 

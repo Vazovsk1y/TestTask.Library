@@ -129,9 +129,17 @@ internal class BookService : IBookService
 		return Response.Success();
 	}
 
-	public Task<Response> DeleteAsync(BookId bookId, CancellationToken cancellationToken = default)
+	public async Task<Response> DeleteAsync(BookId bookId, CancellationToken cancellationToken = default)
 	{
-		throw new NotImplementedException();
+		var book = await _dbContext.Books.Include(e => e.Genres).SingleOrDefaultAsync(e => e.Id == bookId, cancellationToken);
+		if (book is null)
+		{
+			return Response.Failure(Errors.EntityWithPassedIdIsNotExists(nameof(Book)));
+		}
+
+		_dbContext.Books.Remove(book);
+		await _dbContext.SaveChangesAsync(cancellationToken);
+		return Response.Success();
 	}
 
 	public Task<Response> HireBooksAsync(BooksHireDTO hireDTO, CancellationToken cancellationToken = default)
