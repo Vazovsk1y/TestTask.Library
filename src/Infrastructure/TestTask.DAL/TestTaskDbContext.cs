@@ -18,6 +18,8 @@ public class TestTaskDbContext : DbContext
 
 	public DbSet<BookHireItem> BookHireItems { get; set; }
 
+	public DbSet<User> Users { get; set; }
+
 	public TestTaskDbContext(DbContextOptions options) : base(options)
 	{
 	}

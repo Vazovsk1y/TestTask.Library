@@ -12,4 +12,9 @@ internal static class Errors
 
 		public const string BookWithPassedISBNIsAlreadyExists = "Book with passed isbn is already exists.";
 	}
+
+	internal static class User
+	{
+		public const string EmailIsAlreadyTaken = "Email is already taken.";
+	}
 }

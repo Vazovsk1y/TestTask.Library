@@ -12,7 +12,7 @@ using TestTask.DAL;
 namespace TestTask.DAL.Migrations
 {
     [DbContext(typeof(TestTaskDbContext))]
-    [Migration("20231211082449_Initial")]
+    [Migration("20231211090402_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -44,152 +44,152 @@ namespace TestTask.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("98ab917f-3163-43af-9f3a-fc50db1c1cc0"),
+                            Id = new Guid("80e1451b-f47a-4cce-8c23-318a70b4299b"),
                             FullName = "Jane Austen"
                         },
                         new
                         {
-                            Id = new Guid("90938517-f842-43ca-9067-7d48bc0f2bee"),
+                            Id = new Guid("0521ad2c-765f-42ba-a427-503540164431"),
                             FullName = "Charles Dickens"
                         },
                         new
                         {
-                            Id = new Guid("74de59d0-fb8e-485b-958c-5861bf9d1130"),
+                            Id = new Guid("fe798bc6-ff2e-47f1-ad28-12a819230cc6"),
                             FullName = "F. Scott Fitzgerald"
                         },
                         new
                         {
-                            Id = new Guid("86b99160-6f76-4e96-bb17-0ee3a4c21aa6"),
+                            Id = new Guid("a56e7c68-5697-4fc1-9fcd-997b32c6f549"),
                             FullName = "J.K. Rowling"
                         },
                         new
                         {
-                            Id = new Guid("bc409169-7ea1-4850-90df-53fa0dd181fc"),
+                            Id = new Guid("814afe3e-d821-45c7-a1b1-e4e4813f45e2"),
                             FullName = "Agatha Christie"
                         },
                         new
                         {
-                            Id = new Guid("e1e15c69-e5f7-425d-9a91-59e3dd366bea"),
+                            Id = new Guid("2356606f-dbb3-4091-abeb-60d2fc72d6fa"),
                             FullName = "George Orwell"
                         },
                         new
                         {
-                            Id = new Guid("8780a8de-0576-49d6-a781-48211edaa32d"),
+                            Id = new Guid("ee8fbf04-993c-4338-b250-e2d058e8d138"),
                             FullName = "Leo Tolstoy"
                         },
                         new
                         {
-                            Id = new Guid("6513ce88-800e-4129-a47e-7f856328a9b0"),
+                            Id = new Guid("a5929383-328e-4c23-a876-0fcd352d462a"),
                             FullName = "William Shakespeare"
                         },
                         new
                         {
-                            Id = new Guid("93774efc-253a-4c9a-b10c-1652ef14c3a0"),
+                            Id = new Guid("e2323aa0-0413-4ef7-afbf-0ee33c3bbf20"),
                             FullName = "Mark Twain"
                         },
                         new
                         {
-                            Id = new Guid("6dd310ce-a007-48b3-bf40-e4380897e200"),
+                            Id = new Guid("0df4da33-d590-491c-8941-118c178fe18e"),
                             FullName = "Gabriel García Márquez"
                         },
                         new
                         {
-                            Id = new Guid("79260a8c-0957-4f10-b830-91698b2e219c"),
+                            Id = new Guid("76bceedd-b908-4537-910c-c5765121210d"),
                             FullName = "Harper Lee"
                         },
                         new
                         {
-                            Id = new Guid("ced2a24a-732b-4744-87b2-7d3468f28fce"),
+                            Id = new Guid("f23804d9-eb6a-439d-8928-9a96b3900456"),
                             FullName = "J.R.R. Tolkien"
                         },
                         new
                         {
-                            Id = new Guid("516caece-3437-4dd7-9839-8a5043e65a46"),
+                            Id = new Guid("eb6bb1b5-f557-4e2f-88cf-6be757835043"),
                             FullName = "Homer"
                         },
                         new
                         {
-                            Id = new Guid("d5b2752d-4454-44a1-83fc-29372aed73c7"),
+                            Id = new Guid("8cb78f09-e28e-4c8e-961f-d3c3b3e16e95"),
                             FullName = "Stephen King"
                         },
                         new
                         {
-                            Id = new Guid("c248abca-7177-4da7-a1b9-d78720d5f01f"),
+                            Id = new Guid("ac18f4ab-f786-46e1-b390-4431999487f6"),
                             FullName = "Ernest Hemingway"
                         },
                         new
                         {
-                            Id = new Guid("64b71e73-58a1-43f2-b461-036fa26f7fcb"),
+                            Id = new Guid("2fe334ca-0dc3-403b-8e7b-eb04ffaefeaf"),
                             FullName = "Emily Brontë"
                         },
                         new
                         {
-                            Id = new Guid("175df3ff-da72-4eb7-969c-9b422d779fd3"),
+                            Id = new Guid("c4b61f12-d22b-4422-859e-f000430b0bc1"),
                             FullName = "Virginia Woolf"
                         },
                         new
                         {
-                            Id = new Guid("21170579-8f47-48c8-a41a-266124770b5a"),
+                            Id = new Guid("5a992b40-a12e-429f-a8a2-3227ac309eb8"),
                             FullName = "Charlotte Brontë"
                         },
                         new
                         {
-                            Id = new Guid("b7633d0c-a97d-4564-99db-f30b216eedc6"),
+                            Id = new Guid("d619b7da-14f1-41a5-9213-291b9c96d13d"),
                             FullName = "Arthur Conan Doyle"
                         },
                         new
                         {
-                            Id = new Guid("b592b8c2-5c2e-4592-9b58-41359ad5bbea"),
+                            Id = new Guid("eb25c724-d36d-4f31-b420-407b4dcaf2d5"),
                             FullName = "Ayn Rand"
                         },
                         new
                         {
-                            Id = new Guid("8f3b7a7a-99c0-4743-87a0-20be60f48b8b"),
+                            Id = new Guid("bdc68685-f540-4683-8f8a-f14a32a51d68"),
                             FullName = "Jane Goodall"
                         },
                         new
                         {
-                            Id = new Guid("52c70c29-ff87-40a7-8cc8-46d0290cd5f3"),
+                            Id = new Guid("d973ab12-02f5-4f51-a40d-66cad7cccfae"),
                             FullName = "Michael Crichton"
                         },
                         new
                         {
-                            Id = new Guid("133dd1b0-9251-4ff3-8e60-35a0d005ceb4"),
+                            Id = new Guid("23312545-93d4-4fdc-b18e-a43a0134b43a"),
                             FullName = "Isaac Asimov"
                         },
                         new
                         {
-                            Id = new Guid("079540e9-5013-4fda-a6bb-a217c1d2f243"),
+                            Id = new Guid("5d9ac423-8c27-4728-a524-bdaae18c3211"),
                             FullName = "Margaret Atwood"
                         },
                         new
                         {
-                            Id = new Guid("1223f27d-e2d8-4342-b524-bccd42a5cc92"),
+                            Id = new Guid("c12cc196-28fb-481b-b6ad-81e87a8fa8c6"),
                             FullName = "Kurt Vonnegut"
                         },
                         new
                         {
-                            Id = new Guid("16780e43-6e2f-40de-b786-7525ac3f8753"),
+                            Id = new Guid("6e59ee16-0a7d-43c4-be5e-9adb2219212a"),
                             FullName = "H.G. Wells"
                         },
                         new
                         {
-                            Id = new Guid("e63cca5a-111f-47e1-b5d5-8a88f2bf5006"),
+                            Id = new Guid("11268797-dd1f-48ac-a50a-595be0ba5368"),
                             FullName = "Roald Dahl"
                         },
                         new
                         {
-                            Id = new Guid("21fbb7f9-30e0-4911-a616-e13a6d3a80fe"),
+                            Id = new Guid("5e1b881e-9197-4dfb-88c7-3fc6ebfad1c9"),
                             FullName = "Hermann Hesse"
                         },
                         new
                         {
-                            Id = new Guid("9d43d676-5e95-4861-be75-b2bba76af8b5"),
+                            Id = new Guid("e02efb96-c335-47f1-8e49-779a67c76918"),
                             FullName = "Aldous Huxley"
                         },
                         new
                         {
-                            Id = new Guid("46aed2bf-b21d-4731-921b-acec93be34c3"),
+                            Id = new Guid("ada5c9f4-5cfd-4a89-a919-ac04a4cd34d2"),
                             FullName = "Toni Morrison"
                         });
                 });
@@ -225,435 +225,435 @@ namespace TestTask.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c26c1e57-5c39-4ca9-959a-27cc92739f50"),
-                            AuthorId = new Guid("133dd1b0-9251-4ff3-8e60-35a0d005ceb4"),
+                            Id = new Guid("e1874f15-e51b-489c-8d47-0e7ddd69af99"),
+                            AuthorId = new Guid("f23804d9-eb6a-439d-8928-9a96b3900456"),
                             Description = "A timeless tale of love, manners, and societal expectations in Regency-era England by Jane Austen.",
                             ISBN = "978-0-14-143951-8",
                             Title = "Pride and Prejudice"
                         },
                         new
                         {
-                            Id = new Guid("67e2ad32-674b-48c8-9f6a-96b239faf9b6"),
-                            AuthorId = new Guid("b7633d0c-a97d-4564-99db-f30b216eedc6"),
+                            Id = new Guid("9df25a01-ac3b-4aed-8016-5818d5d75277"),
+                            AuthorId = new Guid("23312545-93d4-4fdc-b18e-a43a0134b43a"),
                             Description = "Harper Lee's powerful exploration of racial injustice and moral growth in the American South.",
                             ISBN = "978-0-06-112348-4",
                             Title = "To Kill a Mockingbird"
                         },
                         new
                         {
-                            Id = new Guid("a2d303e5-b091-4175-b3ad-f18c4150c2ca"),
-                            AuthorId = new Guid("e63cca5a-111f-47e1-b5d5-8a88f2bf5006"),
+                            Id = new Guid("84d30260-a3a4-42c3-82d6-f0560bf08e00"),
+                            AuthorId = new Guid("5a992b40-a12e-429f-a8a2-3227ac309eb8"),
                             Description = "George Orwell's dystopian masterpiece, depicting a nightmarish future under totalitarian rule.",
                             ISBN = "978-0-45-152493-5",
                             Title = "1984"
                         },
                         new
                         {
-                            Id = new Guid("ae908b3b-0fc1-4c2d-a4ed-2d7c6b668f8d"),
-                            AuthorId = new Guid("93774efc-253a-4c9a-b10c-1652ef14c3a0"),
+                            Id = new Guid("b1da5403-e8e0-40a6-9bda-dc8804f56ded"),
+                            AuthorId = new Guid("d973ab12-02f5-4f51-a40d-66cad7cccfae"),
                             Description = "F. Scott Fitzgerald's classic portrayal of the American Dream, excess, and disillusionment in the Roaring Twenties.",
                             ISBN = "978-0-74-327356-5",
                             Title = "The Great Gatsby"
                         },
                         new
                         {
-                            Id = new Guid("861c2273-d46f-40cd-be54-ba71f0d01958"),
-                            AuthorId = new Guid("52c70c29-ff87-40a7-8cc8-46d0290cd5f3"),
+                            Id = new Guid("1831af5f-a84b-4bd2-a3c1-8ab7424a2ee0"),
+                            AuthorId = new Guid("76bceedd-b908-4537-910c-c5765121210d"),
                             Description = "J.K. Rowling's enchanting introduction to the wizarding world, filled with magic, friendship, and adventure.",
                             ISBN = "978-0-59-035342-7",
                             Title = "Harry Potter and the Sorcerer's Stone"
                         },
                         new
                         {
-                            Id = new Guid("faa58f73-9d27-49cf-bac2-a60630ea2ce4"),
-                            AuthorId = new Guid("079540e9-5013-4fda-a6bb-a217c1d2f243"),
+                            Id = new Guid("302f95fa-d26f-4032-afcd-b2e2ac75162a"),
+                            AuthorId = new Guid("76bceedd-b908-4537-910c-c5765121210d"),
                             ISBN = "978-0-54-792822-7",
                             Title = "The Hobbit"
                         },
                         new
                         {
-                            Id = new Guid("37dc49d3-76bc-4b9e-8598-360181f66196"),
-                            AuthorId = new Guid("133dd1b0-9251-4ff3-8e60-35a0d005ceb4"),
+                            Id = new Guid("e1ea488f-27a3-41c4-945c-a5b488b0eb87"),
+                            AuthorId = new Guid("0df4da33-d590-491c-8941-118c178fe18e"),
                             Description = "J.D. Salinger's iconic coming-of-age novel, capturing the angst and rebellion of a teenage boy in post-World War II America.",
                             ISBN = "978-0-31-676948-0",
                             Title = "The Catcher in the Rye"
                         },
                         new
                         {
-                            Id = new Guid("618131df-0838-4027-b04a-2581d5b2fda4"),
-                            AuthorId = new Guid("9d43d676-5e95-4861-be75-b2bba76af8b5"),
+                            Id = new Guid("6e5be676-ca81-44dd-beb1-560ccb97c2bc"),
+                            AuthorId = new Guid("c4b61f12-d22b-4422-859e-f000430b0bc1"),
                             Description = "Leo Tolstoy's epic portrayal of Russian society during the Napoleonic Wars, blending history, philosophy, and human drama.",
                             ISBN = "978-0-14-303500-8",
                             Title = "War and Peace"
                         },
                         new
                         {
-                            Id = new Guid("7c217837-2cd7-47d1-88c7-676f2332b52f"),
-                            AuthorId = new Guid("133dd1b0-9251-4ff3-8e60-35a0d005ceb4"),
+                            Id = new Guid("d3153c3b-d2ef-497c-abde-95c303d4bfa7"),
+                            AuthorId = new Guid("d973ab12-02f5-4f51-a40d-66cad7cccfae"),
                             Description = "Homer's ancient Greek epic, recounting the adventures of Odysseus as he journeys home from the Trojan War.",
                             ISBN = "978-0-14-303995-2",
                             Title = "The Odyssey"
                         },
                         new
                         {
-                            Id = new Guid("f8623d6d-1370-4cad-b556-738a82906ccd"),
-                            AuthorId = new Guid("e63cca5a-111f-47e1-b5d5-8a88f2bf5006"),
+                            Id = new Guid("b0bef37c-5964-452b-9ba5-620c07d7ccab"),
+                            AuthorId = new Guid("2356606f-dbb3-4091-abeb-60d2fc72d6fa"),
                             ISBN = "978-0-06-085052-4",
                             Title = "Brave New World"
                         },
                         new
                         {
-                            Id = new Guid("de1bac85-8b79-4b8a-b135-9ca754fcbc41"),
-                            AuthorId = new Guid("6513ce88-800e-4129-a47e-7f856328a9b0"),
+                            Id = new Guid("e4150e1d-9b95-45d7-8ad3-fa15de300645"),
+                            AuthorId = new Guid("11268797-dd1f-48ac-a50a-595be0ba5368"),
                             Description = "J.R.R. Tolkien's epic fantasy trilogy, featuring the quest to destroy the One Ring and save Middle-earth from the dark forces of Sauron.",
                             ISBN = "978-0-54-400341-5",
                             Title = "The Lord of the Rings"
                         },
                         new
                         {
-                            Id = new Guid("3503bdf4-978d-421a-a488-9f2a049f6b4c"),
-                            AuthorId = new Guid("079540e9-5013-4fda-a6bb-a217c1d2f243"),
+                            Id = new Guid("667607d0-7799-4bee-99ef-5837e4205a0b"),
+                            AuthorId = new Guid("f23804d9-eb6a-439d-8928-9a96b3900456"),
                             Description = "Mary Shelley's gothic tale of scientific hubris and the consequences of creating life.",
                             ISBN = "978-0-48-628211-4",
                             Title = "Frankenstein"
                         },
                         new
                         {
-                            Id = new Guid("edbe7b2d-3fed-455d-ba25-f7f0353be0b7"),
-                            AuthorId = new Guid("6dd310ce-a007-48b3-bf40-e4380897e200"),
+                            Id = new Guid("07ec9696-d9e6-4c0d-8be8-c2441c6d02b2"),
+                            AuthorId = new Guid("814afe3e-d821-45c7-a1b1-e4e4813f45e2"),
                             Description = "Fyodor Dostoevsky's psychological thriller, exploring the moral and psychological turmoil of a young man in St. Petersburg.",
                             ISBN = "978-0-14-310763-7",
                             Title = "Crime and Punishment"
                         },
                         new
                         {
-                            Id = new Guid("5304db79-d521-4115-80da-fcb1f68e2b42"),
-                            AuthorId = new Guid("8780a8de-0576-49d6-a781-48211edaa32d"),
+                            Id = new Guid("7a4a64be-ae4f-49ea-98eb-7b19b122edd1"),
+                            AuthorId = new Guid("c4b61f12-d22b-4422-859e-f000430b0bc1"),
                             ISBN = "978-0-06-112028-4",
                             Title = "One Hundred Years of Solitude"
                         },
                         new
                         {
-                            Id = new Guid("31ba1edf-a578-40b3-81fd-ac291495017c"),
-                            AuthorId = new Guid("b7633d0c-a97d-4564-99db-f30b216eedc6"),
+                            Id = new Guid("580b58e8-92d3-4ff3-a423-e31c9567a64c"),
+                            AuthorId = new Guid("a5929383-328e-4c23-a876-0fcd352d462a"),
                             Description = "C.S. Lewis's beloved fantasy series, taking readers to the enchanting land of Narnia and its magical inhabitants.",
                             ISBN = "978-0-06-112008-4",
                             Title = "The Chronicles of Narnia"
                         },
                         new
                         {
-                            Id = new Guid("01908b56-06dc-43b3-b828-9d2f6d7cc0c2"),
-                            AuthorId = new Guid("079540e9-5013-4fda-a6bb-a217c1d2f243"),
+                            Id = new Guid("4278e19f-46d2-4a9a-b37c-482962d2fcd7"),
+                            AuthorId = new Guid("5d9ac423-8c27-4728-a524-bdaae18c3211"),
                             Description = "Douglas Adams's hilarious space adventure, following the misadventures of Arthur Dent and his extraterrestrial friend Ford Prefect.",
                             ISBN = "978-0-34-539180-3",
                             Title = "The Hitchhiker's Guide to the Galaxy"
                         },
                         new
                         {
-                            Id = new Guid("a8faca57-ed76-4b08-8a15-4bdae8f670ef"),
-                            AuthorId = new Guid("86b99160-6f76-4e96-bb17-0ee3a4c21aa6"),
+                            Id = new Guid("46637532-4091-4793-8e80-b1bc3ec93c7f"),
+                            AuthorId = new Guid("2fe334ca-0dc3-403b-8e7b-eb04ffaefeaf"),
                             Description = "Stephen King's chilling tale of supernatural horror, isolation, and the descent into madness at the haunted Overlook Hotel.",
                             ISBN = "978-0-38-511683-7",
                             Title = "The Shining"
                         },
                         new
                         {
-                            Id = new Guid("3435e764-2930-470e-8826-5b5fd3b098f3"),
-                            AuthorId = new Guid("98ab917f-3163-43af-9f3a-fc50db1c1cc0"),
+                            Id = new Guid("6ad3551f-e70c-4831-b90b-56c6c7ecee99"),
+                            AuthorId = new Guid("c12cc196-28fb-481b-b6ad-81e87a8fa8c6"),
                             Description = "Herman Melville's epic journey aboard the whaling ship Pequod, driven by Captain Ahab's obsessive quest for the white whale.",
                             ISBN = "978-0-14-310635-7",
                             Title = "Moby-Dick"
                         },
                         new
                         {
-                            Id = new Guid("0b0b9f27-802f-4e85-8bbd-c70b48641123"),
-                            AuthorId = new Guid("b7633d0c-a97d-4564-99db-f30b216eedc6"),
+                            Id = new Guid("0899c3aa-33ac-4ea6-acd5-c719f5680f5d"),
+                            AuthorId = new Guid("ac18f4ab-f786-46e1-b390-4431999487f6"),
                             ISBN = "978-0-19-921613-3",
                             Title = "Alice's Adventures in Wonderland"
                         },
                         new
                         {
-                            Id = new Guid("e2c46869-9860-4e06-8841-b6bc9edd0da4"),
-                            AuthorId = new Guid("21170579-8f47-48c8-a41a-266124770b5a"),
+                            Id = new Guid("f27ad368-063f-4612-b663-916eb6d53210"),
+                            AuthorId = new Guid("e02efb96-c335-47f1-8e49-779a67c76918"),
                             Description = "Stieg Larsson's gripping mystery featuring investigative journalist Mikael Blomkvist and the enigmatic hacker Lisbeth Salander.",
                             ISBN = "978-0-30-726975-1",
                             Title = "The Girl with the Dragon Tattoo"
                         },
                         new
                         {
-                            Id = new Guid("6b3bf8bc-e501-4d71-91ff-b28492210da4"),
-                            AuthorId = new Guid("e63cca5a-111f-47e1-b5d5-8a88f2bf5006"),
+                            Id = new Guid("ad83ae84-17e0-4f74-a614-6829134ca021"),
+                            AuthorId = new Guid("d973ab12-02f5-4f51-a40d-66cad7cccfae"),
                             Description = "Suzanne Collins's dystopian saga of Katniss Everdeen's fight for survival in the annual Hunger Games.",
                             ISBN = "978-0-43-902352-8",
                             Title = "The Hunger Games"
                         },
                         new
                         {
-                            Id = new Guid("300be501-adfe-4eda-9fe6-03ecf9ebbec0"),
-                            AuthorId = new Guid("90938517-f842-43ca-9067-7d48bc0f2bee"),
+                            Id = new Guid("245a11ec-ed95-4957-ba37-04aa6fa15016"),
+                            AuthorId = new Guid("eb25c724-d36d-4f31-b420-407b4dcaf2d5"),
                             Description = "Frank Herbert's science fiction epic set in a distant future where noble houses vie for control of the desert planet Arrakis and its valuable spice melange.",
                             ISBN = "978-0-44-117271-9",
                             Title = "Dune"
                         },
                         new
                         {
-                            Id = new Guid("c800f15d-902f-4926-9573-18b6f9bdba71"),
-                            AuthorId = new Guid("133dd1b0-9251-4ff3-8e60-35a0d005ceb4"),
+                            Id = new Guid("945f95cb-8575-486c-930f-5a940ab7274e"),
+                            AuthorId = new Guid("80e1451b-f47a-4cce-8c23-318a70b4299b"),
                             Description = "Fyodor Dostoevsky's exploration of morality, faith, and family dynamics through the complex relationships of the Karamazov brothers.",
                             ISBN = "978-0-14-044924-2",
                             Title = "The Brothers Karamazov"
                         },
                         new
                         {
-                            Id = new Guid("4bfff86c-aca1-48a1-8968-65bcc6b5f334"),
-                            AuthorId = new Guid("1223f27d-e2d8-4342-b524-bccd42a5cc92"),
+                            Id = new Guid("8a9963cf-111d-44d4-97ab-c6bf2409c2d1"),
+                            AuthorId = new Guid("a5929383-328e-4c23-a876-0fcd352d462a"),
                             ISBN = "978-0-14-143955-6",
                             Title = "Wuthering Heights"
                         },
                         new
                         {
-                            Id = new Guid("d24c539b-79b8-4ca2-9420-ad513f3e1d86"),
-                            AuthorId = new Guid("6dd310ce-a007-48b3-bf40-e4380897e200"),
+                            Id = new Guid("1e5b98ca-833d-4515-9353-e0cb106a4441"),
+                            AuthorId = new Guid("fe798bc6-ff2e-47f1-ad28-12a819230cc6"),
                             Description = "Geoffrey Chaucer's collection of stories told by a diverse group of pilgrims on their journey to Canterbury.",
                             ISBN = "978-0-14-042234-4",
                             Title = "The Canterbury Tales"
                         },
                         new
                         {
-                            Id = new Guid("f13afc2d-c7bc-4182-8437-563ceb96ad6a"),
-                            AuthorId = new Guid("21170579-8f47-48c8-a41a-266124770b5a"),
+                            Id = new Guid("95a78143-b9bd-4920-b58b-f9ce8560ed76"),
+                            AuthorId = new Guid("5d9ac423-8c27-4728-a524-bdaae18c3211"),
                             ISBN = "978-0-14-143957-0",
                             Title = "The Picture of Dorian Gray"
                         },
                         new
                         {
-                            Id = new Guid("3ffa4aec-59c1-4ff4-acd5-1e7ddd1478d9"),
-                            AuthorId = new Guid("6513ce88-800e-4129-a47e-7f856328a9b0"),
+                            Id = new Guid("07bace45-b504-4f2f-b6d5-3f7a5b43896a"),
+                            AuthorId = new Guid("23312545-93d4-4fdc-b18e-a43a0134b43a"),
                             Description = "Paulo Coelho's philosophical novel about Santiago, a shepherd boy, on a journey to discover his personal legend.",
                             ISBN = "978-0-06-112241-5",
                             Title = "The Alchemist"
                         },
                         new
                         {
-                            Id = new Guid("40923629-d9e0-4db5-8128-f2ec66a5b12a"),
-                            AuthorId = new Guid("079540e9-5013-4fda-a6bb-a217c1d2f243"),
+                            Id = new Guid("d70b5b1c-e525-427c-92c8-cc7b116b3d31"),
+                            AuthorId = new Guid("5a992b40-a12e-429f-a8a2-3227ac309eb8"),
                             Description = "Margaret Atwood's dystopian novel set in the Republic of Gilead, where women's rights are severely restricted.",
                             ISBN = "978-0-38-549081-8",
                             Title = "The Handmaid's Tale"
                         },
                         new
                         {
-                            Id = new Guid("f151e3d5-a85e-42be-a355-9f84dcbdb269"),
-                            AuthorId = new Guid("1223f27d-e2d8-4342-b524-bccd42a5cc92"),
+                            Id = new Guid("fc578e00-9620-4a6d-8cad-8eb9eadb6567"),
+                            AuthorId = new Guid("e02efb96-c335-47f1-8e49-779a67c76918"),
                             Description = "Cormac McCarthy's post-apocalyptic tale of a father and son's harrowing journey through a desolate landscape.",
                             ISBN = "978-0-30-738789-9",
                             Title = "The Road"
                         },
                         new
                         {
-                            Id = new Guid("633a6c2f-e200-405b-a42b-37c06aebb35b"),
-                            AuthorId = new Guid("b592b8c2-5c2e-4592-9b58-41359ad5bbea"),
+                            Id = new Guid("57bf4a63-04d5-4434-999d-2d960e570dc1"),
+                            AuthorId = new Guid("2fe334ca-0dc3-403b-8e7b-eb04ffaefeaf"),
                             Description = "Alexandre Dumas's classic adventure novel of betrayal, revenge, and redemption.",
                             ISBN = "978-0-14-044926-6",
                             Title = "The Count of Monte Cristo"
                         },
                         new
                         {
-                            Id = new Guid("8ba41b69-5de2-4759-be90-e86834abe8f9"),
-                            AuthorId = new Guid("74de59d0-fb8e-485b-958c-5861bf9d1130"),
+                            Id = new Guid("d65bc50d-e537-48c4-b2ed-498d84c8f30e"),
+                            AuthorId = new Guid("e2323aa0-0413-4ef7-afbf-0ee33c3bbf20"),
                             ISBN = "978-0-45-141943-9",
                             Title = "Les Misérables"
                         },
                         new
                         {
-                            Id = new Guid("5c334b61-e2a6-4eb4-a8c7-8a04416ad80a"),
-                            AuthorId = new Guid("93774efc-253a-4c9a-b10c-1652ef14c3a0"),
+                            Id = new Guid("b1ee63f5-8470-49bf-8fe7-b81cdc4fa6f6"),
+                            AuthorId = new Guid("11268797-dd1f-48ac-a50a-595be0ba5368"),
                             Description = "Joseph Heller's satirical novel depicting the absurdities and paradoxes of war.",
                             ISBN = "978-0-68-484121-9",
                             Title = "The Catch-22"
                         },
                         new
                         {
-                            Id = new Guid("c6485cdb-8640-4275-9747-e83145207bfe"),
-                            AuthorId = new Guid("b7633d0c-a97d-4564-99db-f30b216eedc6"),
+                            Id = new Guid("cea1b38f-d5fe-4c16-b8bc-de665affefc0"),
+                            AuthorId = new Guid("0df4da33-d590-491c-8941-118c178fe18e"),
                             ISBN = "978-0-15-602835-6",
                             Title = "The Color Purple"
                         },
                         new
                         {
-                            Id = new Guid("85b4a2f5-e9f1-4d9f-9487-244107f5734a"),
-                            AuthorId = new Guid("86b99160-6f76-4e96-bb17-0ee3a4c21aa6"),
+                            Id = new Guid("e0d631bb-7b97-4abd-97b3-67e559ebae8c"),
+                            AuthorId = new Guid("6e59ee16-0a7d-43c4-be5e-9adb2219212a"),
                             Description = "Ken Kesey's classic novel set in a mental hospital, challenging authority and celebrating individuality.",
                             ISBN = "978-0-45-116396-7",
                             Title = "One Flew Over the Cuckoo's Nest"
                         },
                         new
                         {
-                            Id = new Guid("34ca9f52-d97e-4c5b-826d-17cf14db7a8b"),
-                            AuthorId = new Guid("79260a8c-0957-4f10-b830-91698b2e219c"),
+                            Id = new Guid("574a7bfb-4c3d-4079-97f3-c1b520c92924"),
+                            AuthorId = new Guid("2356606f-dbb3-4091-abeb-60d2fc72d6fa"),
                             Description = "Andy Weir's gripping science fiction novel about an astronaut stranded on Mars and his fight for survival.",
                             ISBN = "978-0-55-341802-6",
                             Title = "The Martian"
                         },
                         new
                         {
-                            Id = new Guid("efa09ccf-2570-4c39-b119-0bcde2c48868"),
-                            AuthorId = new Guid("52c70c29-ff87-40a7-8cc8-46d0290cd5f3"),
+                            Id = new Guid("e4d4bee8-b0b7-4db5-af78-819f67a489ca"),
+                            AuthorId = new Guid("a5929383-328e-4c23-a876-0fcd352d462a"),
                             Description = "Khaled Hosseini's powerful novel about friendship, betrayal, and redemption in Afghanistan.",
                             ISBN = "978-1-59-463193-1",
                             Title = "The Kite Runner"
                         },
                         new
                         {
-                            Id = new Guid("49d6f6d0-10e1-4997-b023-0b2f7d15d43f"),
-                            AuthorId = new Guid("b7633d0c-a97d-4564-99db-f30b216eedc6"),
+                            Id = new Guid("aa897b73-d8dc-433a-8fda-43a9e3f1e185"),
+                            AuthorId = new Guid("5e1b881e-9197-4dfb-88c7-3fc6ebfad1c9"),
                             ISBN = "978-1-25-030169-7",
                             Title = "The Silent Patient"
                         },
                         new
                         {
-                            Id = new Guid("8f85d6c1-a18c-4687-ae7a-1d2e4d39bac5"),
-                            AuthorId = new Guid("21fbb7f9-30e0-4911-a616-e13a6d3a80fe"),
+                            Id = new Guid("9c9a0582-7ff2-410b-90fa-a5170e302b98"),
+                            AuthorId = new Guid("d973ab12-02f5-4f51-a40d-66cad7cccfae"),
                             Description = "Tara Westover's memoir recounting her journey from a rural Idaho childhood to gaining an education against all odds.",
                             ISBN = "978-0-52-558019-4",
                             Title = "Educated"
                         },
                         new
                         {
-                            Id = new Guid("4555dcdf-4f39-4eba-b192-69cb694cd4e1"),
-                            AuthorId = new Guid("86b99160-6f76-4e96-bb17-0ee3a4c21aa6"),
+                            Id = new Guid("17414652-443e-4b84-8cb4-199911bce604"),
+                            AuthorId = new Guid("23312545-93d4-4fdc-b18e-a43a0134b43a"),
                             Description = "Yuval Noah Harari's exploration of the history and impact of Homo sapiens on the world.",
                             ISBN = "978-0-99-711060-8",
                             Title = "Sapiens: A Brief History of Humankind"
                         },
                         new
                         {
-                            Id = new Guid("4d04d1fd-19fa-42aa-a513-5415e8340f83"),
-                            AuthorId = new Guid("b592b8c2-5c2e-4592-9b58-41359ad5bbea"),
+                            Id = new Guid("11b32795-f5c6-42db-8ecc-3b97c4125271"),
+                            AuthorId = new Guid("d973ab12-02f5-4f51-a40d-66cad7cccfae"),
                             Description = "Donna Tartt's Pulitzer Prize-winning novel about a young boy's life after a terrorist attack in a New York art museum.",
                             ISBN = "978-0-31-605543-7",
                             Title = "The Goldfinch"
                         },
                         new
                         {
-                            Id = new Guid("181f69bd-3756-4bc7-a43a-4b5c41461cd9"),
-                            AuthorId = new Guid("52c70c29-ff87-40a7-8cc8-46d0290cd5f3"),
+                            Id = new Guid("83c61a3e-650b-425e-98cc-964a62314033"),
+                            AuthorId = new Guid("2fe334ca-0dc3-403b-8e7b-eb04ffaefeaf"),
                             Description = "Erin Morgenstern's magical tale of a mysterious competition between two illusionists in a magical circus.",
                             ISBN = "978-0-38-553970-6",
                             Title = "The Night Circus"
                         },
                         new
                         {
-                            Id = new Guid("64977bb3-d94c-4a18-a021-0262696a153d"),
-                            AuthorId = new Guid("52c70c29-ff87-40a7-8cc8-46d0290cd5f3"),
+                            Id = new Guid("093a8c6d-d250-44ff-9f83-bfc0610ecb54"),
+                            AuthorId = new Guid("ac18f4ab-f786-46e1-b390-4431999487f6"),
                             Description = "Rebecca Skloot's biography exploring the life and legacy of Henrietta Lacks, whose cells were used for medical research without her knowledge.",
                             ISBN = "978-1-40-005217-2",
                             Title = "The Immortal Life of Henrietta Lacks"
                         },
                         new
                         {
-                            Id = new Guid("20939ac3-5e65-4c08-b438-0a2dc2fa3a1a"),
-                            AuthorId = new Guid("175df3ff-da72-4eb7-969c-9b422d779fd3"),
+                            Id = new Guid("35ecccd2-374a-4d41-9bfa-7d3ee82d5e7e"),
+                            AuthorId = new Guid("fe798bc6-ff2e-47f1-ad28-12a819230cc6"),
                             Description = "John Green's heart-wrenching novel about two teenagers with cancer who fall in love.",
                             ISBN = "978-0-14-242417-9",
                             Title = "The Fault in Our Stars"
                         },
                         new
                         {
-                            Id = new Guid("a6a480b0-8310-4a49-a0b1-54e6112be513"),
-                            AuthorId = new Guid("6513ce88-800e-4129-a47e-7f856328a9b0"),
+                            Id = new Guid("4571b00c-4105-480c-bb46-7460fc5e1857"),
+                            AuthorId = new Guid("fe798bc6-ff2e-47f1-ad28-12a819230cc6"),
                             Description = "M. Scott Peck's exploration of personal growth, love, and spiritual development.",
                             ISBN = "978-0-74-324315-8",
                             Title = "The Road Less Traveled"
                         },
                         new
                         {
-                            Id = new Guid("d38cff8b-03e3-4881-b59d-7466533e12f7"),
-                            AuthorId = new Guid("9d43d676-5e95-4861-be75-b2bba76af8b5"),
+                            Id = new Guid("ce071188-9786-4668-937f-13f08bf7ee35"),
+                            AuthorId = new Guid("eb6bb1b5-f557-4e2f-88cf-6be757835043"),
                             Description = "Paula Hawkins's psychological thriller about a woman who becomes entangled in a missing person investigation.",
                             ISBN = "978-1-59-463402-4",
                             Title = "The Girl on the Train"
                         },
                         new
                         {
-                            Id = new Guid("eced989d-bcdf-48f9-ada4-28396d97f8c4"),
-                            AuthorId = new Guid("8f3b7a7a-99c0-4743-87a0-20be60f48b8b"),
+                            Id = new Guid("61fa2b59-5266-4c35-840e-4116c2c05fd0"),
+                            AuthorId = new Guid("814afe3e-d821-45c7-a1b1-e4e4813f45e2"),
                             Description = "Dan Brown's gripping mystery involving symbology, art, and secret societies.",
                             ISBN = "978-0-30-747427-8",
                             Title = "The Da Vinci Code"
                         },
                         new
                         {
-                            Id = new Guid("cc291c88-39c4-40c3-a1e4-e01105b4b969"),
-                            AuthorId = new Guid("86b99160-6f76-4e96-bb17-0ee3a4c21aa6"),
+                            Id = new Guid("ed861929-37a9-4dd6-9b5c-ddda3a7af973"),
+                            AuthorId = new Guid("ee8fbf04-993c-4338-b250-e2d058e8d138"),
                             Description = "Kathryn Stockett's novel about African American maids working in white households in Jackson, Mississippi, during the early 1960s.",
                             ISBN = "978-0-42-523220-0",
                             Title = "The Help"
                         },
                         new
                         {
-                            Id = new Guid("f521ba4b-7098-4f59-b741-0ca27c719980"),
-                            AuthorId = new Guid("64b71e73-58a1-43f2-b461-036fa26f7fcb"),
+                            Id = new Guid("82093d00-46ec-42b3-84d7-8508be0e6786"),
+                            AuthorId = new Guid("0521ad2c-765f-42ba-a427-503540164431"),
                             ISBN = "978-0-14-044022-5",
                             Title = "The Three Musketeers"
                         },
                         new
                         {
-                            Id = new Guid("27dfba61-d9d0-4c93-bac1-a12a6a8c717f"),
-                            AuthorId = new Guid("8780a8de-0576-49d6-a781-48211edaa32d"),
+                            Id = new Guid("8ce03732-06fe-439e-b36c-ff18348be186"),
+                            AuthorId = new Guid("ee8fbf04-993c-4338-b250-e2d058e8d138"),
                             Description = "Haruki Murakami's surreal and mesmerizing novel exploring the mysteries of human consciousness.",
                             ISBN = "978-0-67-977543-0",
                             Title = "The Wind-Up Bird Chronicle"
                         },
                         new
                         {
-                            Id = new Guid("4459c13c-f848-4aa4-ae42-f299e9d612fe"),
-                            AuthorId = new Guid("9d43d676-5e95-4861-be75-b2bba76af8b5"),
+                            Id = new Guid("474e27d2-84f1-4329-ba69-2dcdfac76a13"),
+                            AuthorId = new Guid("80e1451b-f47a-4cce-8c23-318a70b4299b"),
                             ISBN = "978-0-37-584220-7",
                             Title = "The Book Thief"
                         },
                         new
                         {
-                            Id = new Guid("fe3d3a04-8afc-4728-8b6c-eacc833aaa6a"),
-                            AuthorId = new Guid("74de59d0-fb8e-485b-958c-5861bf9d1130"),
+                            Id = new Guid("84673902-3fe0-460d-8387-5c07d4c86a65"),
+                            AuthorId = new Guid("80e1451b-f47a-4cce-8c23-318a70b4299b"),
                             Description = "Amy Tan's novel exploring the relationships between Chinese-American immigrant mothers and their American-born daughters.",
                             ISBN = "978-0-80-417839-9",
                             Title = "The Joy Luck Club"
                         },
                         new
                         {
-                            Id = new Guid("dabceca5-300f-4591-a738-1122163c83ce"),
-                            AuthorId = new Guid("74de59d0-fb8e-485b-958c-5861bf9d1130"),
+                            Id = new Guid("af094fed-c54b-4e1c-96d5-f0515d4412a9"),
+                            AuthorId = new Guid("0df4da33-d590-491c-8941-118c178fe18e"),
                             Description = "John Steinbeck's novel depicting the struggles of a displaced Oklahoma family during the Great Depression.",
                             ISBN = "978-0-14-303943-3",
                             Title = "The Grapes of Wrath"
                         },
                         new
                         {
-                            Id = new Guid("28569081-d422-4b71-9f9c-4cc22f7bec7d"),
-                            AuthorId = new Guid("ced2a24a-732b-4744-87b2-7d3468f28fce"),
+                            Id = new Guid("526d5165-3dfb-40ec-bc96-f20388af40b9"),
+                            AuthorId = new Guid("a56e7c68-5697-4fc1-9fcd-997b32c6f549"),
                             Description = "Charles Duhigg's exploration of the science behind habits and how they can be transformed.",
                             ISBN = "978-0-81-298160-5",
                             Title = "The Power of Habit"
                         },
                         new
                         {
-                            Id = new Guid("7a6ee1a3-49f1-4717-9149-e8e3ebb938b3"),
-                            AuthorId = new Guid("74de59d0-fb8e-485b-958c-5861bf9d1130"),
+                            Id = new Guid("3e9d4bdb-d1ef-44e6-8fdf-df7742cabb4e"),
+                            AuthorId = new Guid("76bceedd-b908-4537-910c-c5765121210d"),
                             ISBN = "978-0-14-200174-5",
                             Title = "The Secret Life of Bees"
                         },
                         new
                         {
-                            Id = new Guid("a17210e7-9845-479e-8d85-658acab39541"),
-                            AuthorId = new Guid("16780e43-6e2f-40de-b786-7525ac3f8753"),
+                            Id = new Guid("5adfc3eb-ba0e-437d-926e-c421ca6dc0da"),
+                            AuthorId = new Guid("0df4da33-d590-491c-8941-118c178fe18e"),
                             ISBN = "978-0-52-551488-0",
                             Title = "The Immortalists"
                         },
                         new
                         {
-                            Id = new Guid("6fcda34e-0083-46e1-bd7d-61d668ca1f87"),
-                            AuthorId = new Guid("6dd310ce-a007-48b3-bf40-e4380897e200"),
+                            Id = new Guid("87d08e42-a569-4613-98e1-aa8ba0ca2288"),
+                            AuthorId = new Guid("5a992b40-a12e-429f-a8a2-3227ac309eb8"),
                             Description = "Jeannette Walls's memoir detailing her unconventional and often troubled childhood.",
                             ISBN = "978-0-74-324754-5",
                             Title = "The Glass Castle"
@@ -677,628 +677,568 @@ namespace TestTask.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            GenreId = new Guid("a1278d68-f099-4d99-92cf-21504b4af305"),
-                            BookId = new Guid("c26c1e57-5c39-4ca9-959a-27cc92739f50")
+                            GenreId = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
+                            BookId = new Guid("e1874f15-e51b-489c-8d47-0e7ddd69af99")
                         },
                         new
                         {
-                            GenreId = new Guid("c5b2c854-275d-477d-8c37-ac3c4b1fa535"),
-                            BookId = new Guid("67e2ad32-674b-48c8-9f6a-96b239faf9b6")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("e1874f15-e51b-489c-8d47-0e7ddd69af99")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("67e2ad32-674b-48c8-9f6a-96b239faf9b6")
+                            GenreId = new Guid("49902634-a374-4466-a710-cb0708ba8676"),
+                            BookId = new Guid("9df25a01-ac3b-4aed-8016-5818d5d75277")
                         },
                         new
                         {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("a2d303e5-b091-4175-b3ad-f18c4150c2ca")
+                            GenreId = new Guid("83163730-951b-4548-bfd3-0638896dc6da"),
+                            BookId = new Guid("9df25a01-ac3b-4aed-8016-5818d5d75277")
                         },
                         new
                         {
-                            GenreId = new Guid("cd0e257b-92f1-46e4-a452-79ce1626c88e"),
-                            BookId = new Guid("a2d303e5-b091-4175-b3ad-f18c4150c2ca")
+                            GenreId = new Guid("5b9072bb-bb3f-402f-bcd9-fc924a83cc06"),
+                            BookId = new Guid("9df25a01-ac3b-4aed-8016-5818d5d75277")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("a2d303e5-b091-4175-b3ad-f18c4150c2ca")
+                            GenreId = new Guid("7e3f1dac-1cbb-47ad-866d-74cfd14d3c9d"),
+                            BookId = new Guid("84d30260-a3a4-42c3-82d6-f0560bf08e00")
                         },
                         new
                         {
-                            GenreId = new Guid("c5b2c854-275d-477d-8c37-ac3c4b1fa535"),
-                            BookId = new Guid("ae908b3b-0fc1-4c2d-a4ed-2d7c6b668f8d")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("84d30260-a3a4-42c3-82d6-f0560bf08e00")
                         },
                         new
                         {
-                            GenreId = new Guid("a1278d68-f099-4d99-92cf-21504b4af305"),
-                            BookId = new Guid("ae908b3b-0fc1-4c2d-a4ed-2d7c6b668f8d")
+                            GenreId = new Guid("100e1c65-4407-41db-a924-fa8d3f146962"),
+                            BookId = new Guid("b1da5403-e8e0-40a6-9bda-dc8804f56ded")
                         },
                         new
                         {
-                            GenreId = new Guid("c5b2c854-275d-477d-8c37-ac3c4b1fa535"),
-                            BookId = new Guid("861c2273-d46f-40cd-be54-ba71f0d01958")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("b1da5403-e8e0-40a6-9bda-dc8804f56ded")
                         },
                         new
                         {
-                            GenreId = new Guid("a1278d68-f099-4d99-92cf-21504b4af305"),
-                            BookId = new Guid("861c2273-d46f-40cd-be54-ba71f0d01958")
+                            GenreId = new Guid("7e3f1dac-1cbb-47ad-866d-74cfd14d3c9d"),
+                            BookId = new Guid("b1da5403-e8e0-40a6-9bda-dc8804f56ded")
                         },
                         new
                         {
-                            GenreId = new Guid("63bdc34b-5143-4dea-8d34-38dbafc72c63"),
-                            BookId = new Guid("861c2273-d46f-40cd-be54-ba71f0d01958")
+                            GenreId = new Guid("dd497a53-1396-40b5-a9a6-aa0563ad84b1"),
+                            BookId = new Guid("b1da5403-e8e0-40a6-9bda-dc8804f56ded")
                         },
                         new
                         {
-                            GenreId = new Guid("6b803fcf-f4fa-4f62-9acc-851cc4745512"),
-                            BookId = new Guid("861c2273-d46f-40cd-be54-ba71f0d01958")
+                            GenreId = new Guid("ab4bc0d0-c950-4bef-b6f5-8c3b28c80836"),
+                            BookId = new Guid("1831af5f-a84b-4bd2-a3c1-8ab7424a2ee0")
                         },
                         new
                         {
-                            GenreId = new Guid("d4c07071-05b6-4846-b84f-decc69ddb08c"),
-                            BookId = new Guid("faa58f73-9d27-49cf-bac2-a60630ea2ce4")
+                            GenreId = new Guid("77ddc50d-0025-40e4-98d2-c9a03ef16fa6"),
+                            BookId = new Guid("1831af5f-a84b-4bd2-a3c1-8ab7424a2ee0")
                         },
                         new
                         {
-                            GenreId = new Guid("c1d58ffa-0f1d-442b-9248-41d31431e8f2"),
-                            BookId = new Guid("faa58f73-9d27-49cf-bac2-a60630ea2ce4")
+                            GenreId = new Guid("49902634-a374-4466-a710-cb0708ba8676"),
+                            BookId = new Guid("1831af5f-a84b-4bd2-a3c1-8ab7424a2ee0")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("37dc49d3-76bc-4b9e-8598-360181f66196")
+                            GenreId = new Guid("9a7e4a9c-b054-4e43-bbe1-1f7aead8b4db"),
+                            BookId = new Guid("302f95fa-d26f-4032-afcd-b2e2ac75162a")
                         },
                         new
                         {
-                            GenreId = new Guid("a1278d68-f099-4d99-92cf-21504b4af305"),
-                            BookId = new Guid("37dc49d3-76bc-4b9e-8598-360181f66196")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("302f95fa-d26f-4032-afcd-b2e2ac75162a")
                         },
                         new
                         {
-                            GenreId = new Guid("674eaa8f-3760-4b07-ae22-f24b15d4d45f"),
-                            BookId = new Guid("618131df-0838-4027-b04a-2581d5b2fda4")
+                            GenreId = new Guid("abe4de7c-b3a5-4c75-b274-42ba15ef2e65"),
+                            BookId = new Guid("e1ea488f-27a3-41c4-945c-a5b488b0eb87")
                         },
                         new
                         {
-                            GenreId = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
-                            BookId = new Guid("7c217837-2cd7-47d1-88c7-676f2332b52f")
+                            GenreId = new Guid("5b9072bb-bb3f-402f-bcd9-fc924a83cc06"),
+                            BookId = new Guid("e1ea488f-27a3-41c4-945c-a5b488b0eb87")
                         },
                         new
                         {
-                            GenreId = new Guid("c1d58ffa-0f1d-442b-9248-41d31431e8f2"),
-                            BookId = new Guid("7c217837-2cd7-47d1-88c7-676f2332b52f")
+                            GenreId = new Guid("9a7e4a9c-b054-4e43-bbe1-1f7aead8b4db"),
+                            BookId = new Guid("e1ea488f-27a3-41c4-945c-a5b488b0eb87")
                         },
                         new
                         {
-                            GenreId = new Guid("cd0e257b-92f1-46e4-a452-79ce1626c88e"),
-                            BookId = new Guid("f8623d6d-1370-4cad-b556-738a82906ccd")
+                            GenreId = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
+                            BookId = new Guid("6e5be676-ca81-44dd-beb1-560ccb97c2bc")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("f8623d6d-1370-4cad-b556-738a82906ccd")
+                            GenreId = new Guid("83163730-951b-4548-bfd3-0638896dc6da"),
+                            BookId = new Guid("d3153c3b-d2ef-497c-abde-95c303d4bfa7")
                         },
                         new
                         {
-                            GenreId = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
-                            BookId = new Guid("f8623d6d-1370-4cad-b556-738a82906ccd")
+                            GenreId = new Guid("77ddc50d-0025-40e4-98d2-c9a03ef16fa6"),
+                            BookId = new Guid("b0bef37c-5964-452b-9ba5-620c07d7ccab")
                         },
                         new
                         {
-                            GenreId = new Guid("c5b2c854-275d-477d-8c37-ac3c4b1fa535"),
-                            BookId = new Guid("de1bac85-8b79-4b8a-b135-9ca754fcbc41")
+                            GenreId = new Guid("49902634-a374-4466-a710-cb0708ba8676"),
+                            BookId = new Guid("e4150e1d-9b95-45d7-8ad3-fa15de300645")
                         },
                         new
                         {
-                            GenreId = new Guid("dfa917b1-fe4b-4c1e-9058-da239f55c7f0"),
-                            BookId = new Guid("de1bac85-8b79-4b8a-b135-9ca754fcbc41")
+                            GenreId = new Guid("ab4bc0d0-c950-4bef-b6f5-8c3b28c80836"),
+                            BookId = new Guid("e4150e1d-9b95-45d7-8ad3-fa15de300645")
                         },
                         new
                         {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("de1bac85-8b79-4b8a-b135-9ca754fcbc41")
+                            GenreId = new Guid("42fff34d-5594-42f4-8748-9d93e11e8fd0"),
+                            BookId = new Guid("667607d0-7799-4bee-99ef-5837e4205a0b")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("3503bdf4-978d-421a-a488-9f2a049f6b4c")
+                            GenreId = new Guid("9a7e4a9c-b054-4e43-bbe1-1f7aead8b4db"),
+                            BookId = new Guid("667607d0-7799-4bee-99ef-5837e4205a0b")
                         },
                         new
                         {
-                            GenreId = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
-                            BookId = new Guid("3503bdf4-978d-421a-a488-9f2a049f6b4c")
+                            GenreId = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
+                            BookId = new Guid("667607d0-7799-4bee-99ef-5837e4205a0b")
                         },
                         new
                         {
-                            GenreId = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
-                            BookId = new Guid("edbe7b2d-3fed-455d-ba25-f7f0353be0b7")
+                            GenreId = new Guid("84409865-5d9e-478b-ab81-8aa445b2f4a2"),
+                            BookId = new Guid("07ec9696-d9e6-4c0d-8be8-c2441c6d02b2")
                         },
                         new
                         {
-                            GenreId = new Guid("6b803fcf-f4fa-4f62-9acc-851cc4745512"),
-                            BookId = new Guid("edbe7b2d-3fed-455d-ba25-f7f0353be0b7")
+                            GenreId = new Guid("83163730-951b-4548-bfd3-0638896dc6da"),
+                            BookId = new Guid("7a4a64be-ae4f-49ea-98eb-7b19b122edd1")
                         },
                         new
                         {
-                            GenreId = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
-                            BookId = new Guid("edbe7b2d-3fed-455d-ba25-f7f0353be0b7")
+                            GenreId = new Guid("88a4bd49-fe23-4a28-8995-82130e504ead"),
+                            BookId = new Guid("580b58e8-92d3-4ff3-a423-e31c9567a64c")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("5304db79-d521-4115-80da-fcb1f68e2b42")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("580b58e8-92d3-4ff3-a423-e31c9567a64c")
                         },
                         new
                         {
-                            GenreId = new Guid("dfa917b1-fe4b-4c1e-9058-da239f55c7f0"),
-                            BookId = new Guid("5304db79-d521-4115-80da-fcb1f68e2b42")
+                            GenreId = new Guid("ab4bc0d0-c950-4bef-b6f5-8c3b28c80836"),
+                            BookId = new Guid("4278e19f-46d2-4a9a-b37c-482962d2fcd7")
                         },
                         new
                         {
-                            GenreId = new Guid("dca4afa1-cd3d-46f7-bd6f-9ee3476c4589"),
-                            BookId = new Guid("31ba1edf-a578-40b3-81fd-ac291495017c")
+                            GenreId = new Guid("100e1c65-4407-41db-a924-fa8d3f146962"),
+                            BookId = new Guid("4278e19f-46d2-4a9a-b37c-482962d2fcd7")
                         },
                         new
                         {
-                            GenreId = new Guid("674eaa8f-3760-4b07-ae22-f24b15d4d45f"),
-                            BookId = new Guid("31ba1edf-a578-40b3-81fd-ac291495017c")
+                            GenreId = new Guid("4979e400-dcc0-438d-a28b-e6fafaf540b6"),
+                            BookId = new Guid("46637532-4091-4793-8e80-b1bc3ec93c7f")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("31ba1edf-a578-40b3-81fd-ac291495017c")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("46637532-4091-4793-8e80-b1bc3ec93c7f")
                         },
                         new
                         {
-                            GenreId = new Guid("d4c07071-05b6-4846-b84f-decc69ddb08c"),
-                            BookId = new Guid("31ba1edf-a578-40b3-81fd-ac291495017c")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("46637532-4091-4793-8e80-b1bc3ec93c7f")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("01908b56-06dc-43b3-b828-9d2f6d7cc0c2")
+                            GenreId = new Guid("77ddc50d-0025-40e4-98d2-c9a03ef16fa6"),
+                            BookId = new Guid("6ad3551f-e70c-4831-b90b-56c6c7ecee99")
                         },
                         new
                         {
-                            GenreId = new Guid("d4c07071-05b6-4846-b84f-decc69ddb08c"),
-                            BookId = new Guid("01908b56-06dc-43b3-b828-9d2f6d7cc0c2")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("6ad3551f-e70c-4831-b90b-56c6c7ecee99")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("01908b56-06dc-43b3-b828-9d2f6d7cc0c2")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("6ad3551f-e70c-4831-b90b-56c6c7ecee99")
                         },
                         new
                         {
-                            GenreId = new Guid("c3a86636-203c-4475-8cea-567646ad2a32"),
-                            BookId = new Guid("a8faca57-ed76-4b08-8a15-4bdae8f670ef")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("0899c3aa-33ac-4ea6-acd5-c719f5680f5d")
                         },
                         new
                         {
-                            GenreId = new Guid("674eaa8f-3760-4b07-ae22-f24b15d4d45f"),
-                            BookId = new Guid("3435e764-2930-470e-8826-5b5fd3b098f3")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("f27ad368-063f-4612-b663-916eb6d53210")
                         },
                         new
                         {
-                            GenreId = new Guid("c1d58ffa-0f1d-442b-9248-41d31431e8f2"),
-                            BookId = new Guid("0b0b9f27-802f-4e85-8bbd-c70b48641123")
+                            GenreId = new Guid("49902634-a374-4466-a710-cb0708ba8676"),
+                            BookId = new Guid("ad83ae84-17e0-4f74-a614-6829134ca021")
                         },
                         new
                         {
-                            GenreId = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
-                            BookId = new Guid("0b0b9f27-802f-4e85-8bbd-c70b48641123")
+                            GenreId = new Guid("83163730-951b-4548-bfd3-0638896dc6da"),
+                            BookId = new Guid("ad83ae84-17e0-4f74-a614-6829134ca021")
                         },
                         new
                         {
-                            GenreId = new Guid("dca4afa1-cd3d-46f7-bd6f-9ee3476c4589"),
-                            BookId = new Guid("0b0b9f27-802f-4e85-8bbd-c70b48641123")
+                            GenreId = new Guid("9a7e4a9c-b054-4e43-bbe1-1f7aead8b4db"),
+                            BookId = new Guid("ad83ae84-17e0-4f74-a614-6829134ca021")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("0b0b9f27-802f-4e85-8bbd-c70b48641123")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("245a11ec-ed95-4957-ba37-04aa6fa15016")
                         },
                         new
                         {
-                            GenreId = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
-                            BookId = new Guid("e2c46869-9860-4e06-8841-b6bc9edd0da4")
+                            GenreId = new Guid("100e1c65-4407-41db-a924-fa8d3f146962"),
+                            BookId = new Guid("245a11ec-ed95-4957-ba37-04aa6fa15016")
                         },
                         new
                         {
-                            GenreId = new Guid("6b803fcf-f4fa-4f62-9acc-851cc4745512"),
-                            BookId = new Guid("e2c46869-9860-4e06-8841-b6bc9edd0da4")
+                            GenreId = new Guid("9a7e4a9c-b054-4e43-bbe1-1f7aead8b4db"),
+                            BookId = new Guid("245a11ec-ed95-4957-ba37-04aa6fa15016")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("e2c46869-9860-4e06-8841-b6bc9edd0da4")
+                            GenreId = new Guid("88a4bd49-fe23-4a28-8995-82130e504ead"),
+                            BookId = new Guid("945f95cb-8575-486c-930f-5a940ab7274e")
                         },
                         new
                         {
-                            GenreId = new Guid("674eaa8f-3760-4b07-ae22-f24b15d4d45f"),
-                            BookId = new Guid("6b3bf8bc-e501-4d71-91ff-b28492210da4")
+                            GenreId = new Guid("77ddc50d-0025-40e4-98d2-c9a03ef16fa6"),
+                            BookId = new Guid("8a9963cf-111d-44d4-97ab-c6bf2409c2d1")
                         },
                         new
                         {
-                            GenreId = new Guid("cd0e257b-92f1-46e4-a452-79ce1626c88e"),
-                            BookId = new Guid("6b3bf8bc-e501-4d71-91ff-b28492210da4")
+                            GenreId = new Guid("42fff34d-5594-42f4-8748-9d93e11e8fd0"),
+                            BookId = new Guid("1e5b98ca-833d-4515-9353-e0cb106a4441")
                         },
                         new
                         {
-                            GenreId = new Guid("c5b2c854-275d-477d-8c37-ac3c4b1fa535"),
-                            BookId = new Guid("6b3bf8bc-e501-4d71-91ff-b28492210da4")
+                            GenreId = new Guid("100e1c65-4407-41db-a924-fa8d3f146962"),
+                            BookId = new Guid("95a78143-b9bd-4920-b58b-f9ce8560ed76")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("300be501-adfe-4eda-9fe6-03ecf9ebbec0")
+                            GenreId = new Guid("9a7e4a9c-b054-4e43-bbe1-1f7aead8b4db"),
+                            BookId = new Guid("07bace45-b504-4f2f-b6d5-3f7a5b43896a")
                         },
                         new
                         {
-                            GenreId = new Guid("674eaa8f-3760-4b07-ae22-f24b15d4d45f"),
-                            BookId = new Guid("c800f15d-902f-4926-9573-18b6f9bdba71")
+                            GenreId = new Guid("dd497a53-1396-40b5-a9a6-aa0563ad84b1"),
+                            BookId = new Guid("07bace45-b504-4f2f-b6d5-3f7a5b43896a")
                         },
                         new
                         {
-                            GenreId = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
-                            BookId = new Guid("c800f15d-902f-4926-9573-18b6f9bdba71")
+                            GenreId = new Guid("ab4bc0d0-c950-4bef-b6f5-8c3b28c80836"),
+                            BookId = new Guid("d70b5b1c-e525-427c-92c8-cc7b116b3d31")
                         },
                         new
                         {
-                            GenreId = new Guid("dfa917b1-fe4b-4c1e-9058-da239f55c7f0"),
-                            BookId = new Guid("4bfff86c-aca1-48a1-8968-65bcc6b5f334")
+                            GenreId = new Guid("88a4bd49-fe23-4a28-8995-82130e504ead"),
+                            BookId = new Guid("d70b5b1c-e525-427c-92c8-cc7b116b3d31")
                         },
                         new
                         {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("d24c539b-79b8-4ca2-9420-ad513f3e1d86")
+                            GenreId = new Guid("100e1c65-4407-41db-a924-fa8d3f146962"),
+                            BookId = new Guid("d70b5b1c-e525-427c-92c8-cc7b116b3d31")
                         },
                         new
                         {
-                            GenreId = new Guid("dca4afa1-cd3d-46f7-bd6f-9ee3476c4589"),
-                            BookId = new Guid("f13afc2d-c7bc-4182-8437-563ceb96ad6a")
+                            GenreId = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
+                            BookId = new Guid("fc578e00-9620-4a6d-8cad-8eb9eadb6567")
                         },
                         new
                         {
-                            GenreId = new Guid("a4945a91-3cb1-418b-ba8e-2f4435349fa3"),
-                            BookId = new Guid("f13afc2d-c7bc-4182-8437-563ceb96ad6a")
+                            GenreId = new Guid("5b9072bb-bb3f-402f-bcd9-fc924a83cc06"),
+                            BookId = new Guid("fc578e00-9620-4a6d-8cad-8eb9eadb6567")
                         },
                         new
                         {
-                            GenreId = new Guid("d4c07071-05b6-4846-b84f-decc69ddb08c"),
-                            BookId = new Guid("3ffa4aec-59c1-4ff4-acd5-1e7ddd1478d9")
+                            GenreId = new Guid("84409865-5d9e-478b-ab81-8aa445b2f4a2"),
+                            BookId = new Guid("57bf4a63-04d5-4434-999d-2d960e570dc1")
                         },
                         new
                         {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("40923629-d9e0-4db5-8128-f2ec66a5b12a")
+                            GenreId = new Guid("100e1c65-4407-41db-a924-fa8d3f146962"),
+                            BookId = new Guid("57bf4a63-04d5-4434-999d-2d960e570dc1")
                         },
                         new
                         {
-                            GenreId = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
-                            BookId = new Guid("40923629-d9e0-4db5-8128-f2ec66a5b12a")
+                            GenreId = new Guid("49902634-a374-4466-a710-cb0708ba8676"),
+                            BookId = new Guid("57bf4a63-04d5-4434-999d-2d960e570dc1")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("40923629-d9e0-4db5-8128-f2ec66a5b12a")
+                            GenreId = new Guid("77ddc50d-0025-40e4-98d2-c9a03ef16fa6"),
+                            BookId = new Guid("57bf4a63-04d5-4434-999d-2d960e570dc1")
                         },
                         new
                         {
-                            GenreId = new Guid("dca4afa1-cd3d-46f7-bd6f-9ee3476c4589"),
-                            BookId = new Guid("40923629-d9e0-4db5-8128-f2ec66a5b12a")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("d65bc50d-e537-48c4-b2ed-498d84c8f30e")
                         },
                         new
                         {
-                            GenreId = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
-                            BookId = new Guid("f151e3d5-a85e-42be-a355-9f84dcbdb269")
+                            GenreId = new Guid("ab4bc0d0-c950-4bef-b6f5-8c3b28c80836"),
+                            BookId = new Guid("d65bc50d-e537-48c4-b2ed-498d84c8f30e")
                         },
                         new
                         {
-                            GenreId = new Guid("c1d58ffa-0f1d-442b-9248-41d31431e8f2"),
-                            BookId = new Guid("f151e3d5-a85e-42be-a355-9f84dcbdb269")
+                            GenreId = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
+                            BookId = new Guid("b1ee63f5-8470-49bf-8fe7-b81cdc4fa6f6")
                         },
                         new
                         {
-                            GenreId = new Guid("63bdc34b-5143-4dea-8d34-38dbafc72c63"),
-                            BookId = new Guid("f151e3d5-a85e-42be-a355-9f84dcbdb269")
+                            GenreId = new Guid("9a7e4a9c-b054-4e43-bbe1-1f7aead8b4db"),
+                            BookId = new Guid("b1ee63f5-8470-49bf-8fe7-b81cdc4fa6f6")
                         },
                         new
                         {
-                            GenreId = new Guid("c1d58ffa-0f1d-442b-9248-41d31431e8f2"),
-                            BookId = new Guid("633a6c2f-e200-405b-a42b-37c06aebb35b")
+                            GenreId = new Guid("abe4de7c-b3a5-4c75-b274-42ba15ef2e65"),
+                            BookId = new Guid("b1ee63f5-8470-49bf-8fe7-b81cdc4fa6f6")
                         },
                         new
                         {
-                            GenreId = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
-                            BookId = new Guid("633a6c2f-e200-405b-a42b-37c06aebb35b")
+                            GenreId = new Guid("7e3f1dac-1cbb-47ad-866d-74cfd14d3c9d"),
+                            BookId = new Guid("cea1b38f-d5fe-4c16-b8bc-de665affefc0")
                         },
                         new
                         {
-                            GenreId = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
-                            BookId = new Guid("633a6c2f-e200-405b-a42b-37c06aebb35b")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("e0d631bb-7b97-4abd-97b3-67e559ebae8c")
                         },
                         new
                         {
-                            GenreId = new Guid("a4945a91-3cb1-418b-ba8e-2f4435349fa3"),
-                            BookId = new Guid("8ba41b69-5de2-4759-be90-e86834abe8f9")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("e0d631bb-7b97-4abd-97b3-67e559ebae8c")
                         },
                         new
                         {
-                            GenreId = new Guid("c3a86636-203c-4475-8cea-567646ad2a32"),
-                            BookId = new Guid("5c334b61-e2a6-4eb4-a8c7-8a04416ad80a")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("574a7bfb-4c3d-4079-97f3-c1b520c92924")
                         },
                         new
                         {
-                            GenreId = new Guid("a4945a91-3cb1-418b-ba8e-2f4435349fa3"),
-                            BookId = new Guid("5c334b61-e2a6-4eb4-a8c7-8a04416ad80a")
+                            GenreId = new Guid("49902634-a374-4466-a710-cb0708ba8676"),
+                            BookId = new Guid("574a7bfb-4c3d-4079-97f3-c1b520c92924")
                         },
                         new
                         {
-                            GenreId = new Guid("c1d58ffa-0f1d-442b-9248-41d31431e8f2"),
-                            BookId = new Guid("5c334b61-e2a6-4eb4-a8c7-8a04416ad80a")
+                            GenreId = new Guid("abe4de7c-b3a5-4c75-b274-42ba15ef2e65"),
+                            BookId = new Guid("e4d4bee8-b0b7-4db5-af78-819f67a489ca")
                         },
                         new
                         {
-                            GenreId = new Guid("63bdc34b-5143-4dea-8d34-38dbafc72c63"),
-                            BookId = new Guid("c6485cdb-8640-4275-9747-e83145207bfe")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("aa897b73-d8dc-433a-8fda-43a9e3f1e185")
                         },
                         new
                         {
-                            GenreId = new Guid("d4c07071-05b6-4846-b84f-decc69ddb08c"),
-                            BookId = new Guid("c6485cdb-8640-4275-9747-e83145207bfe")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("9c9a0582-7ff2-410b-90fa-a5170e302b98")
                         },
                         new
                         {
-                            GenreId = new Guid("c5b2c854-275d-477d-8c37-ac3c4b1fa535"),
-                            BookId = new Guid("85b4a2f5-e9f1-4d9f-9487-244107f5734a")
+                            GenreId = new Guid("dd497a53-1396-40b5-a9a6-aa0563ad84b1"),
+                            BookId = new Guid("9c9a0582-7ff2-410b-90fa-a5170e302b98")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("85b4a2f5-e9f1-4d9f-9487-244107f5734a")
+                            GenreId = new Guid("7e3f1dac-1cbb-47ad-866d-74cfd14d3c9d"),
+                            BookId = new Guid("17414652-443e-4b84-8cb4-199911bce604")
                         },
                         new
                         {
-                            GenreId = new Guid("674eaa8f-3760-4b07-ae22-f24b15d4d45f"),
-                            BookId = new Guid("85b4a2f5-e9f1-4d9f-9487-244107f5734a")
+                            GenreId = new Guid("abe4de7c-b3a5-4c75-b274-42ba15ef2e65"),
+                            BookId = new Guid("17414652-443e-4b84-8cb4-199911bce604")
                         },
                         new
                         {
-                            GenreId = new Guid("d4c07071-05b6-4846-b84f-decc69ddb08c"),
-                            BookId = new Guid("34ca9f52-d97e-4c5b-826d-17cf14db7a8b")
+                            GenreId = new Guid("7e3f1dac-1cbb-47ad-866d-74cfd14d3c9d"),
+                            BookId = new Guid("11b32795-f5c6-42db-8ecc-3b97c4125271")
                         },
                         new
                         {
-                            GenreId = new Guid("63bdc34b-5143-4dea-8d34-38dbafc72c63"),
-                            BookId = new Guid("34ca9f52-d97e-4c5b-826d-17cf14db7a8b")
+                            GenreId = new Guid("49902634-a374-4466-a710-cb0708ba8676"),
+                            BookId = new Guid("11b32795-f5c6-42db-8ecc-3b97c4125271")
                         },
                         new
                         {
-                            GenreId = new Guid("c1d58ffa-0f1d-442b-9248-41d31431e8f2"),
-                            BookId = new Guid("34ca9f52-d97e-4c5b-826d-17cf14db7a8b")
+                            GenreId = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
+                            BookId = new Guid("11b32795-f5c6-42db-8ecc-3b97c4125271")
                         },
                         new
                         {
-                            GenreId = new Guid("cd0e257b-92f1-46e4-a452-79ce1626c88e"),
-                            BookId = new Guid("34ca9f52-d97e-4c5b-826d-17cf14db7a8b")
+                            GenreId = new Guid("83163730-951b-4548-bfd3-0638896dc6da"),
+                            BookId = new Guid("83c61a3e-650b-425e-98cc-964a62314033")
                         },
                         new
                         {
-                            GenreId = new Guid("674eaa8f-3760-4b07-ae22-f24b15d4d45f"),
-                            BookId = new Guid("efa09ccf-2570-4c39-b119-0bcde2c48868")
+                            GenreId = new Guid("77ddc50d-0025-40e4-98d2-c9a03ef16fa6"),
+                            BookId = new Guid("093a8c6d-d250-44ff-9f83-bfc0610ecb54")
                         },
                         new
                         {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("efa09ccf-2570-4c39-b119-0bcde2c48868")
+                            GenreId = new Guid("42fff34d-5594-42f4-8748-9d93e11e8fd0"),
+                            BookId = new Guid("093a8c6d-d250-44ff-9f83-bfc0610ecb54")
                         },
                         new
                         {
-                            GenreId = new Guid("a1278d68-f099-4d99-92cf-21504b4af305"),
-                            BookId = new Guid("49d6f6d0-10e1-4997-b023-0b2f7d15d43f")
+                            GenreId = new Guid("49902634-a374-4466-a710-cb0708ba8676"),
+                            BookId = new Guid("35ecccd2-374a-4d41-9bfa-7d3ee82d5e7e")
                         },
                         new
                         {
-                            GenreId = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
-                            BookId = new Guid("49d6f6d0-10e1-4997-b023-0b2f7d15d43f")
+                            GenreId = new Guid("4979e400-dcc0-438d-a28b-e6fafaf540b6"),
+                            BookId = new Guid("4571b00c-4105-480c-bb46-7460fc5e1857")
                         },
                         new
                         {
-                            GenreId = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
-                            BookId = new Guid("8f85d6c1-a18c-4687-ae7a-1d2e4d39bac5")
+                            GenreId = new Guid("dd497a53-1396-40b5-a9a6-aa0563ad84b1"),
+                            BookId = new Guid("4571b00c-4105-480c-bb46-7460fc5e1857")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("8f85d6c1-a18c-4687-ae7a-1d2e4d39bac5")
+                            GenreId = new Guid("84409865-5d9e-478b-ab81-8aa445b2f4a2"),
+                            BookId = new Guid("ce071188-9786-4668-937f-13f08bf7ee35")
                         },
                         new
                         {
-                            GenreId = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
-                            BookId = new Guid("8f85d6c1-a18c-4687-ae7a-1d2e4d39bac5")
+                            GenreId = new Guid("77ddc50d-0025-40e4-98d2-c9a03ef16fa6"),
+                            BookId = new Guid("ce071188-9786-4668-937f-13f08bf7ee35")
                         },
                         new
                         {
-                            GenreId = new Guid("a4945a91-3cb1-418b-ba8e-2f4435349fa3"),
-                            BookId = new Guid("4555dcdf-4f39-4eba-b192-69cb694cd4e1")
+                            GenreId = new Guid("5b9072bb-bb3f-402f-bcd9-fc924a83cc06"),
+                            BookId = new Guid("61fa2b59-5266-4c35-840e-4116c2c05fd0")
                         },
                         new
                         {
-                            GenreId = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
-                            BookId = new Guid("4555dcdf-4f39-4eba-b192-69cb694cd4e1")
+                            GenreId = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
+                            BookId = new Guid("61fa2b59-5266-4c35-840e-4116c2c05fd0")
                         },
                         new
                         {
-                            GenreId = new Guid("c5b2c854-275d-477d-8c37-ac3c4b1fa535"),
-                            BookId = new Guid("4d04d1fd-19fa-42aa-a513-5415e8340f83")
+                            GenreId = new Guid("dd497a53-1396-40b5-a9a6-aa0563ad84b1"),
+                            BookId = new Guid("ed861929-37a9-4dd6-9b5c-ddda3a7af973")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("4d04d1fd-19fa-42aa-a513-5415e8340f83")
+                            GenreId = new Guid("100e1c65-4407-41db-a924-fa8d3f146962"),
+                            BookId = new Guid("ed861929-37a9-4dd6-9b5c-ddda3a7af973")
                         },
                         new
                         {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("181f69bd-3756-4bc7-a43a-4b5c41461cd9")
+                            GenreId = new Guid("abe4de7c-b3a5-4c75-b274-42ba15ef2e65"),
+                            BookId = new Guid("ed861929-37a9-4dd6-9b5c-ddda3a7af973")
                         },
                         new
                         {
-                            GenreId = new Guid("c1d58ffa-0f1d-442b-9248-41d31431e8f2"),
-                            BookId = new Guid("181f69bd-3756-4bc7-a43a-4b5c41461cd9")
+                            GenreId = new Guid("42fff34d-5594-42f4-8748-9d93e11e8fd0"),
+                            BookId = new Guid("82093d00-46ec-42b3-84d7-8508be0e6786")
                         },
                         new
                         {
-                            GenreId = new Guid("dfa917b1-fe4b-4c1e-9058-da239f55c7f0"),
-                            BookId = new Guid("181f69bd-3756-4bc7-a43a-4b5c41461cd9")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("8ce03732-06fe-439e-b36c-ff18348be186")
                         },
                         new
                         {
-                            GenreId = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
-                            BookId = new Guid("64977bb3-d94c-4a18-a021-0262696a153d")
+                            GenreId = new Guid("7e3f1dac-1cbb-47ad-866d-74cfd14d3c9d"),
+                            BookId = new Guid("8ce03732-06fe-439e-b36c-ff18348be186")
                         },
                         new
                         {
-                            GenreId = new Guid("d4c07071-05b6-4846-b84f-decc69ddb08c"),
-                            BookId = new Guid("64977bb3-d94c-4a18-a021-0262696a153d")
+                            GenreId = new Guid("88a4bd49-fe23-4a28-8995-82130e504ead"),
+                            BookId = new Guid("474e27d2-84f1-4329-ba69-2dcdfac76a13")
                         },
                         new
                         {
-                            GenreId = new Guid("dca4afa1-cd3d-46f7-bd6f-9ee3476c4589"),
-                            BookId = new Guid("64977bb3-d94c-4a18-a021-0262696a153d")
+                            GenreId = new Guid("77ddc50d-0025-40e4-98d2-c9a03ef16fa6"),
+                            BookId = new Guid("474e27d2-84f1-4329-ba69-2dcdfac76a13")
                         },
                         new
                         {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("20939ac3-5e65-4c08-b438-0a2dc2fa3a1a")
+                            GenreId = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
+                            BookId = new Guid("474e27d2-84f1-4329-ba69-2dcdfac76a13")
                         },
                         new
                         {
-                            GenreId = new Guid("c3a86636-203c-4475-8cea-567646ad2a32"),
-                            BookId = new Guid("20939ac3-5e65-4c08-b438-0a2dc2fa3a1a")
+                            GenreId = new Guid("83163730-951b-4548-bfd3-0638896dc6da"),
+                            BookId = new Guid("84673902-3fe0-460d-8387-5c07d4c86a65")
                         },
                         new
                         {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("a6a480b0-8310-4a49-a0b1-54e6112be513")
+                            GenreId = new Guid("dd497a53-1396-40b5-a9a6-aa0563ad84b1"),
+                            BookId = new Guid("84673902-3fe0-460d-8387-5c07d4c86a65")
                         },
                         new
                         {
-                            GenreId = new Guid("dca4afa1-cd3d-46f7-bd6f-9ee3476c4589"),
-                            BookId = new Guid("d38cff8b-03e3-4881-b59d-7466533e12f7")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("af094fed-c54b-4e1c-96d5-f0515d4412a9")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("eced989d-bcdf-48f9-ada4-28396d97f8c4")
+                            GenreId = new Guid("ab4bc0d0-c950-4bef-b6f5-8c3b28c80836"),
+                            BookId = new Guid("af094fed-c54b-4e1c-96d5-f0515d4412a9")
                         },
                         new
                         {
-                            GenreId = new Guid("a1278d68-f099-4d99-92cf-21504b4af305"),
-                            BookId = new Guid("eced989d-bcdf-48f9-ada4-28396d97f8c4")
+                            GenreId = new Guid("100e1c65-4407-41db-a924-fa8d3f146962"),
+                            BookId = new Guid("526d5165-3dfb-40ec-bc96-f20388af40b9")
                         },
                         new
                         {
-                            GenreId = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
-                            BookId = new Guid("cc291c88-39c4-40c3-a1e4-e01105b4b969")
+                            GenreId = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
+                            BookId = new Guid("3e9d4bdb-d1ef-44e6-8fdf-df7742cabb4e")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("cc291c88-39c4-40c3-a1e4-e01105b4b969")
+                            GenreId = new Guid("83163730-951b-4548-bfd3-0638896dc6da"),
+                            BookId = new Guid("3e9d4bdb-d1ef-44e6-8fdf-df7742cabb4e")
                         },
                         new
                         {
-                            GenreId = new Guid("d4c07071-05b6-4846-b84f-decc69ddb08c"),
-                            BookId = new Guid("cc291c88-39c4-40c3-a1e4-e01105b4b969")
+                            GenreId = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
+                            BookId = new Guid("3e9d4bdb-d1ef-44e6-8fdf-df7742cabb4e")
                         },
                         new
                         {
-                            GenreId = new Guid("a4945a91-3cb1-418b-ba8e-2f4435349fa3"),
-                            BookId = new Guid("f521ba4b-7098-4f59-b741-0ca27c719980")
+                            GenreId = new Guid("4979e400-dcc0-438d-a28b-e6fafaf540b6"),
+                            BookId = new Guid("5adfc3eb-ba0e-437d-926e-c421ca6dc0da")
                         },
                         new
                         {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("f521ba4b-7098-4f59-b741-0ca27c719980")
+                            GenreId = new Guid("84409865-5d9e-478b-ab81-8aa445b2f4a2"),
+                            BookId = new Guid("5adfc3eb-ba0e-437d-926e-c421ca6dc0da")
                         },
                         new
                         {
-                            GenreId = new Guid("dfa917b1-fe4b-4c1e-9058-da239f55c7f0"),
-                            BookId = new Guid("f521ba4b-7098-4f59-b741-0ca27c719980")
+                            GenreId = new Guid("dd497a53-1396-40b5-a9a6-aa0563ad84b1"),
+                            BookId = new Guid("87d08e42-a569-4613-98e1-aa8ba0ca2288")
                         },
                         new
                         {
-                            GenreId = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
-                            BookId = new Guid("27dfba61-d9d0-4c93-bac1-a12a6a8c717f")
+                            GenreId = new Guid("4979e400-dcc0-438d-a28b-e6fafaf540b6"),
+                            BookId = new Guid("87d08e42-a569-4613-98e1-aa8ba0ca2288")
                         },
                         new
                         {
-                            GenreId = new Guid("6b803fcf-f4fa-4f62-9acc-851cc4745512"),
-                            BookId = new Guid("27dfba61-d9d0-4c93-bac1-a12a6a8c717f")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("63bdc34b-5143-4dea-8d34-38dbafc72c63"),
-                            BookId = new Guid("27dfba61-d9d0-4c93-bac1-a12a6a8c717f")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("4459c13c-f848-4aa4-ae42-f299e9d612fe")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
-                            BookId = new Guid("fe3d3a04-8afc-4728-8b6c-eacc833aaa6a")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("a4945a91-3cb1-418b-ba8e-2f4435349fa3"),
-                            BookId = new Guid("dabceca5-300f-4591-a738-1122163c83ce")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("a1278d68-f099-4d99-92cf-21504b4af305"),
-                            BookId = new Guid("dabceca5-300f-4591-a738-1122163c83ce")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("c3a86636-203c-4475-8cea-567646ad2a32"),
-                            BookId = new Guid("28569081-d422-4b71-9f9c-4cc22f7bec7d")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("63bdc34b-5143-4dea-8d34-38dbafc72c63"),
-                            BookId = new Guid("28569081-d422-4b71-9f9c-4cc22f7bec7d")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("a1278d68-f099-4d99-92cf-21504b4af305"),
-                            BookId = new Guid("7a6ee1a3-49f1-4717-9149-e8e3ebb938b3")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("674eaa8f-3760-4b07-ae22-f24b15d4d45f"),
-                            BookId = new Guid("7a6ee1a3-49f1-4717-9149-e8e3ebb938b3")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("c5b2c854-275d-477d-8c37-ac3c4b1fa535"),
-                            BookId = new Guid("a17210e7-9845-479e-8d85-658acab39541")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
-                            BookId = new Guid("6fcda34e-0083-46e1-bd7d-61d668ca1f87")
-                        },
-                        new
-                        {
-                            GenreId = new Guid("a4945a91-3cb1-418b-ba8e-2f4435349fa3"),
-                            BookId = new Guid("6fcda34e-0083-46e1-bd7d-61d668ca1f87")
+                            GenreId = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
+                            BookId = new Guid("87d08e42-a569-4613-98e1-aa8ba0ca2288")
                         });
                 });
 
@@ -1363,92 +1303,92 @@ namespace TestTask.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("63bdc34b-5143-4dea-8d34-38dbafc72c63"),
+                            Id = new Guid("83163730-951b-4548-bfd3-0638896dc6da"),
                             Title = "Science Fiction"
                         },
                         new
                         {
-                            Id = new Guid("5a72e833-d1ce-45f0-aa66-55a5a6ddeed3"),
+                            Id = new Guid("9a7e4a9c-b054-4e43-bbe1-1f7aead8b4db"),
                             Title = "Fantasy"
                         },
                         new
                         {
-                            Id = new Guid("fa635920-0c61-49be-ace0-3a5b4aa13b0a"),
+                            Id = new Guid("ab4bc0d0-c950-4bef-b6f5-8c3b28c80836"),
                             Title = "Mystery"
                         },
                         new
                         {
-                            Id = new Guid("c1d58ffa-0f1d-442b-9248-41d31431e8f2"),
+                            Id = new Guid("5b9072bb-bb3f-402f-bcd9-fc924a83cc06"),
                             Title = "Thriller"
                         },
                         new
                         {
-                            Id = new Guid("d4c07071-05b6-4846-b84f-decc69ddb08c"),
+                            Id = new Guid("dd497a53-1396-40b5-a9a6-aa0563ad84b1"),
                             Title = "Romance"
                         },
                         new
                         {
-                            Id = new Guid("8f220de1-b593-4bf2-9bf1-33c213491d79"),
+                            Id = new Guid("abe4de7c-b3a5-4c75-b274-42ba15ef2e65"),
                             Title = "Historical Fiction"
                         },
                         new
                         {
-                            Id = new Guid("39726e1a-7a3c-4822-8afc-9a8cc7dd445e"),
+                            Id = new Guid("4979e400-dcc0-438d-a28b-e6fafaf540b6"),
                             Title = "Horror"
                         },
                         new
                         {
-                            Id = new Guid("c3a86636-203c-4475-8cea-567646ad2a32"),
+                            Id = new Guid("1e3b2b42-fde4-4e24-80c1-c7e3df95f181"),
                             Title = "Adventure"
                         },
                         new
                         {
-                            Id = new Guid("dca4afa1-cd3d-46f7-bd6f-9ee3476c4589"),
+                            Id = new Guid("88a4bd49-fe23-4a28-8995-82130e504ead"),
                             Title = "Non-Fiction"
                         },
                         new
                         {
-                            Id = new Guid("a4945a91-3cb1-418b-ba8e-2f4435349fa3"),
+                            Id = new Guid("100e1c65-4407-41db-a924-fa8d3f146962"),
                             Title = "Biography"
                         },
                         new
                         {
-                            Id = new Guid("a1278d68-f099-4d99-92cf-21504b4af305"),
+                            Id = new Guid("77ddc50d-0025-40e4-98d2-c9a03ef16fa6"),
                             Title = "Drama"
                         },
                         new
                         {
-                            Id = new Guid("c5b2c854-275d-477d-8c37-ac3c4b1fa535"),
+                            Id = new Guid("7542901e-05d1-45a7-825b-ecd0afb9758b"),
                             Title = "Comedy"
                         },
                         new
                         {
-                            Id = new Guid("cd0e257b-92f1-46e4-a452-79ce1626c88e"),
+                            Id = new Guid("a366cd89-7e8a-4c30-889e-2215c28cc734"),
                             Title = "Poetry"
                         },
                         new
                         {
-                            Id = new Guid("674eaa8f-3760-4b07-ae22-f24b15d4d45f"),
+                            Id = new Guid("42fff34d-5594-42f4-8748-9d93e11e8fd0"),
                             Title = "Self-Help"
                         },
                         new
                         {
-                            Id = new Guid("c65881aa-ec34-4bdd-85b9-58f4c4c3c795"),
+                            Id = new Guid("49902634-a374-4466-a710-cb0708ba8676"),
                             Title = "Cookbook"
                         },
                         new
                         {
-                            Id = new Guid("dfa917b1-fe4b-4c1e-9058-da239f55c7f0"),
+                            Id = new Guid("7e3f1dac-1cbb-47ad-866d-74cfd14d3c9d"),
                             Title = "Science"
                         },
                         new
                         {
-                            Id = new Guid("6b803fcf-f4fa-4f62-9acc-851cc4745512"),
+                            Id = new Guid("84409865-5d9e-478b-ab81-8aa445b2f4a2"),
                             Title = "Business"
                         },
                         new
                         {
-                            Id = new Guid("06c56ed3-cc67-4f1f-b1ce-f564000e33af"),
+                            Id = new Guid("73a0f79e-fb3c-4c33-a159-00b31bc53c85"),
                             Title = "Travel"
                         });
                 });
@@ -1471,7 +1411,7 @@ namespace TestTask.DAL.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("TestTask.Domain.Entities.Book", b =>
