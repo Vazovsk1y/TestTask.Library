@@ -10,5 +10,6 @@ public static class Registrator
 		.AddScoped<IBookService, BookService>()
 		.AddScoped<IAuthorService, AuthorService>()
 		.AddScoped<IGenreService, GenreService>()
+		.AddScoped<IBookHireService, BookHireService>()
 		;
 }

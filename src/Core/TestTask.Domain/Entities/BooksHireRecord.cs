@@ -5,7 +5,9 @@ namespace TestTask.Domain.Entities;
 
 public class BooksHireRecord : Entity<BooksHireRecordId>
 {
-	public required DateTimeOffset BooksHiredDate { get; set; }
+	public required UserId UserId { get; set; }
+
+	public required DateTimeOffset BooksHireDate { get; set; }
 
 	public ICollection<BookHireItem> Books { get; set; } = new List<BookHireItem>();
 
