@@ -3,6 +3,7 @@ using TestTask.Application.Services;
 using TestTask.Application.Shared;
 using TestTask.DAL;
 using TestTask.Domain.Entities;
+using TestTask.Domain.Enums;
 
 namespace TestTask.Application.Implementations.Services;
 
@@ -86,6 +87,7 @@ internal class BookService : IBookService
 			Title = addDTO.Title,
 			Description = addDTO.Description,
 			ISBN = addDTO.ISBN,
+			BookStatus = BookStatus.Free,
 		};
 
 		book.Genres = addDTO.Genres.Select(e => new BookGenre { BookId = book.Id, GenreId = e }).ToList();

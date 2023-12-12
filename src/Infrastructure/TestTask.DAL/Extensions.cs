@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TestTask.Domain.Common;
 using TestTask.Domain.Entities;
+using TestTask.Domain.Enums;
 
 namespace TestTask.DAL;
 
@@ -153,6 +154,7 @@ public static class DataSeeder
 				Title = item.Title,
 				Description = item.Description,
 				AuthorId = _authors[random.Next(0, _authors.Count - 1)].Id,
+				BookStatus = BookStatus.Free,
 			};
 
 			books.Add(book);
