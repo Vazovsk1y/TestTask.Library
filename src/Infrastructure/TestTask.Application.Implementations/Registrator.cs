@@ -12,5 +12,6 @@ public static class Registrator
 		.AddScoped<IGenreService, GenreService>()
 		.AddScoped<IBookHireService, BookHireService>()
 		.AddScoped<IUserService, UserService>()
+		.AddScoped<IAuthenticationService, AuthenticationService>()
 		;
 }

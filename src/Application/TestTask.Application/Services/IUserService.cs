@@ -5,5 +5,5 @@ namespace TestTask.Application.Services;
 
 public interface IUserService
 {
-	Task<Response<UserId>> RegisterAsync(UserRegisterDTO userDTO, CancellationToken cancellationToken = default);
+	Task<Response<UserId>> RegisterAsync(UserCredentialsDTO userDTO, CancellationToken cancellationToken = default);
 }

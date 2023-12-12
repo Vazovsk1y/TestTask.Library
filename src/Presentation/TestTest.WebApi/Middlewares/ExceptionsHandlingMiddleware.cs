@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace TestTest.WebApi.Middlewares;
+namespace TestTask.WebApi.Middlewares;
 
 public class ExceptionsHandlingMiddleware : IMiddleware
 {

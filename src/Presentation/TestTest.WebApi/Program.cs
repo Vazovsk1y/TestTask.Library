@@ -1,18 +1,24 @@
 using Microsoft.EntityFrameworkCore;
 using TestTask.DAL;
 using TestTask.Application.Implementations;
-using TestTest.WebApi.Middlewares;
+using TestTask.WebApi.Middlewares;
+using TestTask.WebApi;
+using TestTask.Application.Implementations.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+const string JwtSectionName = "Jwt";
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationLayer();
 builder.Services.AddDataAccessLayer(builder.Configuration);
 builder.Services.AddTransient<ExceptionsHandlingMiddleware>();
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection(JwtSectionName));
+builder.Services.AddAuthenticationWithJwtBearer(builder.Configuration.GetSection(JwtSectionName).Get<JwtOptions>()!);
+builder.Services.AddSwaggerWithJwtSecurity();
 
 var app = builder.Build();
 
@@ -25,6 +31,7 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

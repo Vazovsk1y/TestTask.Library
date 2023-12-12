@@ -16,7 +16,7 @@ internal class UserService : IUserService
 		_dbContext = dbContext;
 	}
 
-	public async Task<Response<UserId>> RegisterAsync(UserRegisterDTO userDTO, CancellationToken cancellationToken = default)
+	public async Task<Response<UserId>> RegisterAsync(UserCredentialsDTO userDTO, CancellationToken cancellationToken = default)
 	{
 		if (await _dbContext.Users.AnyAsync(e => e.Email == userDTO.Email, cancellationToken))
 		{

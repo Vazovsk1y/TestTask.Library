@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TestTest.WebApi.Validation;
+namespace TestTask.WebApi.Validation;
 
 public class NotEmptyCollectionOfAttribute<TEntity> : ValidationAttribute
 {

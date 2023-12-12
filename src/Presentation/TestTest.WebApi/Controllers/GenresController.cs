@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TestTask.Application.Services;
 
-namespace TestTest.WebApi.Controllers;
+namespace TestTask.WebApi.Controllers;
 
 public class GenresController : BaseController
 {
