@@ -65,8 +65,31 @@ internal class BookHireService : IBookHireService
 		return result;
     }
 
-	public Task<Response> ReturnBooksAsync(BooksReturnDTO returnDTO, CancellationToken cancellationToken = default)
+	public async Task<Response> ReturnBooksAsync(BooksReturnDTO returnDTO, CancellationToken cancellationToken = default)
 	{
-		throw new NotImplementedException();
-	}
+		var books = await _dbContext.Books.Where(e => returnDTO.BooksToReturn.Contains(e.Id) && e.BookStatus == BookStatus.Hired).ToListAsync(cancellationToken);
+		var unavailableBooks = returnDTO.BooksToReturn.Except(books.Select(e => e.Id));
+		if (unavailableBooks.Any())
+		{
+			return Response.Failure<IReadOnlyCollection<HiredBookDTO>>($"Books with [{string.Join(",", unavailableBooks.Select(e => e.Value))}] ids is not exists or is not hired.");
+		}
+
+		var hireItems = await _dbContext.BookHireItems.Where(e => returnDTO.BooksToReturn.Contains(e.BookId) && !e.IsBookReturned).ToListAsync(cancellationToken);
+		var unavailableHireItems = returnDTO.BooksToReturn.Except(hireItems.Select(e => e.BookId));
+		if (unavailableHireItems.Any())
+		{
+			throw new InvalidOperationException();
+		}
+
+        foreach (var book in books)
+        {
+			book.BookStatus = BookStatus.Free;
+			var hireItem = hireItems.First(e => e.BookId == book.Id);
+			hireItem.BookReturnDate = returnDTO.BookReturnDate;
+			hireItem.IsBookReturned = true;
+        }
+
+		await _dbContext.SaveChangesAsync(cancellationToken);
+		return Response.Success();
+    }
 }

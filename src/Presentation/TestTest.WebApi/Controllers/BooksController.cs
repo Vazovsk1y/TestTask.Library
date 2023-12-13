@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using System.Text.Json.Serialization;
 using TestTask.Application.Services;
 using TestTask.Application.Shared;
@@ -94,9 +95,9 @@ public class BooksController : BaseController
 	}
 
 	[HttpPost("hire")]
-	public async Task<IActionResult> HireBook(BooksHireModel hireModel)
+	public async Task<IActionResult> HireBooks(BooksHireModel hireModel)
 	{
-		var userId = Guid.Parse(HttpContext.User.Claims.First(e => e.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value);
+		var userId = Guid.Parse(HttpContext.User.Claims.First(e => e.Type == ClaimTypes.NameIdentifier).Value);
 
 		var result = await _bookHireService.HireBooksAsync(
 			new BooksHireDTO
@@ -109,6 +110,21 @@ public class BooksController : BaseController
 		if (result.IsSuccess)
 		{
 			return Ok(result.Value);
+		}
+
+		return BadRequest(result.ErrorMessage);
+	}
+
+	[HttpPost("return")]
+	public async Task<IActionResult> ReturnBooks(BooksReturnModel returnModel)
+	{
+		var result = await _bookHireService.ReturnBooksAsync(
+			new BooksReturnDTO(returnModel.BooksToReturn.Select(e => new BookId(e)), returnModel.BooksReturnDate)
+			);
+
+		if (result.IsSuccess)
+		{
+			return Ok();
 		}
 
 		return BadRequest(result.ErrorMessage);
@@ -171,37 +187,48 @@ public class BooksHireModel
 
 	[Required]
 	public DateTimeOffset BooksHireDate { get; set; }
+
+	public class BookToHireModel
+	{
+		[Required]
+		[NotEmptyGuid]
+		public Guid BookId { get; set; }
+
+		[Required]
+		[Range(1, long.MaxValue)]
+		public long HireDurationHours { get; set; }
+
+		[JsonIgnore]
+		public TimeSpan HireDuration => TimeSpan.FromHours(HireDurationHours);
+
+		public override bool Equals(object? obj)
+		{
+			if (obj is null || GetType() != obj.GetType())
+			{
+				return false;
+			}
+
+			return ((BookToHireModel)obj).BookId == BookId;
+		}
+
+		public override int GetHashCode()
+		{
+			unchecked
+			{
+				int hash = 17;
+				return hash * 42 + BookId.GetHashCode();
+			}
+		}
+	}
 }
 
-public class BookToHireModel
+public class BooksReturnModel
 {
 	[Required]
 	[NotEmptyGuid]
-	public Guid BookId { get; set; }
+	[OnlyUniqueValuesOf<Guid>]
+	public IEnumerable<Guid> BooksToReturn { get; set; } = null!;
 
 	[Required]
-	[Range(1, long.MaxValue)]
-	public long HireDurationHours { get; set; }
-
-	[JsonIgnore]
-	public TimeSpan HireDuration => TimeSpan.FromHours(HireDurationHours);
-
-	public override bool Equals(object? obj)
-	{
-		if (obj is null || GetType() != obj.GetType())
-		{
-			return false;
-		}
-
-		return ((BookToHireModel)obj).BookId == BookId;
-	}
-
-	public override int GetHashCode()
-	{
-		unchecked
-		{
-			int hash = 17;
-			return hash * 42 + BookId.GetHashCode();
-		}
-	}
+	public DateTimeOffset BooksReturnDate { get; set; }
 }

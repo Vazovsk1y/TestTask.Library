@@ -2,4 +2,4 @@
 
 namespace TestTask.Application.Shared;
 
-public record BooksReturnDTO(IEnumerable<BookId> HiredBooks);
+public record BooksReturnDTO(IEnumerable<BookId> BooksToReturn, DateTimeOffset BookReturnDate);
