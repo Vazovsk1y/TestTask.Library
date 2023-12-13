@@ -1,14 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+using Swashbuckle.AspNetCore.Annotations;
 using System.Security.Claims;
-using System.Text.Json.Serialization;
 using TestTask.Application.Services;
 using TestTask.Application.Shared;
 using TestTask.Domain.Entities;
 using TestTask.WebApi.Validation;
+using TestTask.WebApi.ViewModels;
 
 namespace TestTask.WebApi.Controllers;
 
+[ApiController]
+[Route("api/books")]
 public class BooksController : BaseController
 {
 	private readonly IBookService _bookService;
@@ -20,7 +22,13 @@ public class BooksController : BaseController
 		_bookHireService = bookHireService;
 	}
 
+
 	[HttpGet]
+	[SwaggerOperation(Summary = "Get all books.", Description = "Get a collection of all books.")]
+	[SwaggerResponse(200, "Returns a collection of BookDTO.", typeof(IReadOnlyCollection<BookDTO>))]
+	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> GetAllBooks()
 	{
 		var result = await _bookService.GetAllAsync();
@@ -29,10 +37,16 @@ public class BooksController : BaseController
 			return Ok(result.Value);
 		}
 
-		return NotFound(result.ErrorMessage);
+		return BadRequest(result.ErrorMessage);
 	}
 
 	[HttpGet("{id}")]
+	[SwaggerOperation(Summary = "Get a book by Id.", Description = "Get a book by its unique identifier.")]
+	[SwaggerResponse(200, "Returns a BookDTO.", typeof(BookDTO))]
+	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(404, "If the book with the specified Id is not found.")]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> GetBookById([NotEmptyGuid] Guid id)
 	{
 		var result = await _bookService.GetByIdAsync(new BookId(id));
@@ -44,8 +58,13 @@ public class BooksController : BaseController
 		return NotFound(result.ErrorMessage);
 	}
 
-
 	[HttpGet("byISBN/{isbn}")]
+	[SwaggerOperation(Summary = "Get a book by ISBN.", Description = "Get a book by its ISBN.")]
+	[SwaggerResponse(200, "Returns a BookDTO.", typeof(BookDTO))]
+	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(404, "If the book with the specified ISBN is not found.")]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> GetBookByISBN([ISBN] string isbn)
 	{
 		var result = await _bookService.GetByISBNAsync(isbn);
@@ -58,6 +77,11 @@ public class BooksController : BaseController
 	}
 
 	[HttpPost]
+	[SwaggerOperation(Summary = "Create a new book.", Description = "Create a new book with the provided details.")]
+	[SwaggerResponse(200, "Returns the ID of the created book.", typeof(Guid))]
+	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> CreateBook(BookCreateModel book)
 	{
 		var result = await _bookService.SaveAsync(new BookAddDTO(book.Title, book.ISBN, new AuthorId(book.AuthorId), book.Genres.Select(e => new GenreId(e)), book.Description));
@@ -70,6 +94,11 @@ public class BooksController : BaseController
 	}
 
 	[HttpPut]
+	[SwaggerOperation(Summary = "Update a book.", Description = "Update an existing book with the provided details.")]
+	[SwaggerResponse(200, "If the book is successfully updated.")]
+	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> UpdateBook(BookUpdateModel book)
 	{
 		var result = await _bookService.UpdateAsync(new BookUpdateDTO(new BookId(book.BookId), book.Title, book.ISBN, new AuthorId(book.AuthorId), book.Genres.Select(e => new GenreId(e)), book.Description));
@@ -81,8 +110,13 @@ public class BooksController : BaseController
 		return BadRequest(result.ErrorMessage);
 	}
 
-
 	[HttpDelete("{id}")]
+	[SwaggerOperation(Summary = "Delete a book by Id.", Description = "Delete a book by its unique identifier.")]
+	[SwaggerResponse(200, "If the book is successfully deleted.")]
+	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(404, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> DeleteBook([NotEmptyGuid] Guid id)
 	{
 		var result = await _bookService.DeleteAsync(new BookId(id));
@@ -95,6 +129,11 @@ public class BooksController : BaseController
 	}
 
 	[HttpPost("hire")]
+	[SwaggerOperation(Summary = "Hire books.", Description = "Hire books for a specific user with the provided details.")]
+	[SwaggerResponse(200, "Returns the details of the hired books.")]
+	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> HireBooks(BooksHireModel hireModel)
 	{
 		var userId = Guid.Parse(HttpContext.User.Claims.First(e => e.Type == ClaimTypes.NameIdentifier).Value);
@@ -102,8 +141,8 @@ public class BooksController : BaseController
 		var result = await _bookHireService.HireBooksAsync(
 			new BooksHireDTO
 			(
-				new UserId(userId), 
-				hireModel.Books.Select(e => new BookToHireDTO(new BookId(e.BookId), e.HireDuration)), 
+				new UserId(userId),
+				hireModel.Books.Select(e => new BookToHireDTO(new BookId(e.BookId), e.HireDuration)),
 				hireModel.BooksHireDate
 			));
 
@@ -116,6 +155,11 @@ public class BooksController : BaseController
 	}
 
 	[HttpPost("return")]
+	[SwaggerOperation(Summary = "Return books.", Description = "Return previously hired books with the provided details.")]
+	[SwaggerResponse(200, "If the books are successfully returned.")]
+	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> ReturnBooks(BooksReturnModel returnModel)
 	{
 		var result = await _bookHireService.ReturnBooksAsync(
@@ -129,106 +173,4 @@ public class BooksController : BaseController
 
 		return BadRequest(result.ErrorMessage);
 	}
-}
-
-public class BookCreateModel
-{
-	[Required]
-	public string Title { get; set; } = null!;
-
-	[Required]
-	[ISBN]
-	public string ISBN { get; set; } = null!;
-
-	[Required]
-	[NotEmptyGuid]
-	public Guid AuthorId { get; set; }
-
-	[Required]
-	[NotEmptyGuid]
-	[OnlyUniqueValuesOf<Guid>]
-	[NotEmptyCollectionOf<Guid>]
-	public IEnumerable<Guid> Genres { get; set; } = null!;
-
-	public string? Description { get; set; }
-}
-
-public class BookUpdateModel
-{
-	[Required]
-	[NotEmptyGuid]
-	public Guid BookId { get; set; }
-
-	[Required]
-	public string Title { get; set; } = null!;
-
-	[Required]
-	[ISBN]
-	public string ISBN { get; set; } = null!;
-
-	[Required]
-	[NotEmptyGuid]
-	public Guid AuthorId { get; set; }
-
-	[Required]
-	[NotEmptyGuid]
-	[OnlyUniqueValuesOf<Guid>]
-	[NotEmptyCollectionOf<Guid>]
-	public IEnumerable<Guid> Genres { get; set; } = null!;
-
-	public string? Description { get; set; }
-}
-
-public class BooksHireModel
-{
-	[Required]
-	[OnlyUniqueValuesOf<BookToHireModel>]
-	public IEnumerable<BookToHireModel> Books { get; set; } = null!;
-
-	[Required]
-	public DateTimeOffset BooksHireDate { get; set; }
-
-	public class BookToHireModel
-	{
-		[Required]
-		[NotEmptyGuid]
-		public Guid BookId { get; set; }
-
-		[Required]
-		[Range(1, long.MaxValue)]
-		public long HireDurationHours { get; set; }
-
-		[JsonIgnore]
-		public TimeSpan HireDuration => TimeSpan.FromHours(HireDurationHours);
-
-		public override bool Equals(object? obj)
-		{
-			if (obj is null || GetType() != obj.GetType())
-			{
-				return false;
-			}
-
-			return ((BookToHireModel)obj).BookId == BookId;
-		}
-
-		public override int GetHashCode()
-		{
-			unchecked
-			{
-				int hash = 17;
-				return hash * 42 + BookId.GetHashCode();
-			}
-		}
-	}
-}
-
-public class BooksReturnModel
-{
-	[Required]
-	[NotEmptyGuid]
-	[OnlyUniqueValuesOf<Guid>]
-	public IEnumerable<Guid> BooksToReturn { get; set; } = null!;
-
-	[Required]
-	public DateTimeOffset BooksReturnDate { get; set; }
 }

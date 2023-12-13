@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using TestTask.Application.Services;
+using TestTask.Application.Shared;
 
 namespace TestTask.WebApi.Controllers;
 
@@ -13,6 +15,11 @@ public class GenresController : BaseController
 	}
 
 	[HttpGet]
+	[SwaggerOperation(Summary = "Get all genres.", Description = "Get a collection of all genres.")]
+	[SwaggerResponse(200, "Returns a collection of GenreInfo.", typeof(IReadOnlyCollection<GenreInfo>))]
+	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> GetAllGenres()
 	{
 		var result = await _genreService.GetAllAsync();
@@ -21,6 +28,6 @@ public class GenresController : BaseController
 			return Ok(result.Value);
 		}
 
-		return NotFound(result.ErrorMessage);
+		return BadRequest(result.ErrorMessage);
 	}
 }

@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+using Swashbuckle.AspNetCore.Annotations;
 using TestTask.Application.Services;
 using TestTask.Application.Shared;
+using TestTask.WebApi.ViewModels;
 
 namespace TestTask.WebApi.Controllers;
 
@@ -18,6 +19,10 @@ public class UsersController : BaseController
 	}
 
 	[HttpPost("sign-up"), AllowAnonymous]
+	[SwaggerOperation(Summary = "Register a new user.", Description = "Register a new user.")]
+	[SwaggerResponse(200, "Returns the message about successfully registration.", typeof(string))]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> RegisterUser(UserCredentialsModel user)
 	{
 		var result = await _userService.RegisterAsync(new UserCredentialsDTO(user.Email, user.Password));
@@ -30,6 +35,11 @@ public class UsersController : BaseController
 	}
 
 	[HttpPost("sign-in"), AllowAnonymous]
+	[SwaggerOperation(Summary = "Login the user.", Description = "Login and receive a token for access.")]
+	[SwaggerResponse(200, "Return a jwt token.", typeof(string))]
+	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(404, "Account not found.")]
+	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> Login(UserCredentialsModel userCredentials)
 	{
 		var result = await _authenticationService.LoginAsync(new UserCredentialsDTO(userCredentials.Email, userCredentials.Password));
@@ -38,16 +48,6 @@ public class UsersController : BaseController
 			return Ok(result.Value.Value);
 		}
 
-		return BadRequest(result.ErrorMessage);
+		return NotFound(result.ErrorMessage);
 	}
-}
-
-public class UserCredentialsModel
-{
-	[Required]
-	[EmailAddress]
-	public string Email { get; set; } = null!;
-
-	[Required]
-	public string Password { get; set; } = null!;
 }

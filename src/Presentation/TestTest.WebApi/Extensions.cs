@@ -16,6 +16,8 @@ public static class Extensions
 	{
 		return collection.AddSwaggerGen(swagger =>
 		{
+			swagger.EnableAnnotations();
+
 			swagger.AddSecurityDefinition(Bearer, new OpenApiSecurityScheme
 			{
 				Name = "Authorization",
