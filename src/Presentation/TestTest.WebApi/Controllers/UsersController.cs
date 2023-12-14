@@ -38,7 +38,6 @@ public class UsersController : BaseController
 	[SwaggerOperation(Summary = "Login the user.", Description = "Login and receive a token for access.")]
 	[SwaggerResponse(200, "Return a jwt token.", typeof(string))]
 	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
-	[SwaggerResponse(404, "Account not found.")]
 	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> Login(UserCredentialsModel userCredentials)
 	{
@@ -48,6 +47,6 @@ public class UsersController : BaseController
 			return Ok(result.Value.Value);
 		}
 
-		return NotFound(result.ErrorMessage);
+		return BadRequest(result.ErrorMessage);
 	}
 }
