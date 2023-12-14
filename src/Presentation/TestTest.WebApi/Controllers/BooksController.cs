@@ -44,7 +44,6 @@ public class BooksController : BaseController
 	[SwaggerOperation(Summary = "Get a book by Id.", Description = "Get a book by its unique identifier.")]
 	[SwaggerResponse(200, "Returns a BookDTO.", typeof(BookDTO))]
 	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
-	[SwaggerResponse(404, "If the book with the specified Id is not found.")]
 	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
 	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> GetBookById([NotEmptyGuid] Guid id)
@@ -55,14 +54,13 @@ public class BooksController : BaseController
 			return Ok(result.Value);
 		}
 
-		return NotFound(result.ErrorMessage);
+		return BadRequest(result.ErrorMessage);
 	}
 
 	[HttpGet("byISBN/{isbn}")]
 	[SwaggerOperation(Summary = "Get a book by ISBN.", Description = "Get a book by its ISBN.")]
 	[SwaggerResponse(200, "Returns a BookDTO.", typeof(BookDTO))]
 	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
-	[SwaggerResponse(404, "If the book with the specified ISBN is not found.")]
 	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
 	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> GetBookByISBN([ISBN] string isbn)
@@ -73,7 +71,7 @@ public class BooksController : BaseController
 			return Ok(result.Value);
 		}
 
-		return NotFound(result.ErrorMessage);
+		return BadRequest(result.ErrorMessage);
 	}
 
 	[HttpPost]
@@ -114,7 +112,6 @@ public class BooksController : BaseController
 	[SwaggerOperation(Summary = "Delete a book by Id.", Description = "Delete a book by its unique identifier.")]
 	[SwaggerResponse(200, "If the book is successfully deleted.")]
 	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
-	[SwaggerResponse(404, Constants.SwaggerConstants.InvalidRequestMessage)]
 	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
 	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> DeleteBook([NotEmptyGuid] Guid id)
@@ -125,7 +122,7 @@ public class BooksController : BaseController
 			return Ok($"Book with [{id}] was successfully deleted.");
 		}
 
-		return NotFound(result.ErrorMessage);
+		return BadRequest(result.ErrorMessage);
 	}
 
 	[HttpPost("hire")]
