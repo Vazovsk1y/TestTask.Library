@@ -70,8 +70,8 @@ https://localhost:7148/swagger/index.html
 
 ## Notes
   1. A Clean Architecture/Onion Architecture architecture was chosen as the architecture for this assignment. This architecture includes 4 layers: presentation, application, infrastructure, core layers.
-  2. Services chosed for instead of CQRS approach.
-  3. Value id approach was chosen for guid shell due to more convenience.
+  2. Services chosen for this task instead of CQRS approach.
+  3. Value id approach chosen for guid shell due to more convenience.
   4. An unauthorized user will get a 401 error when trying to perform any operation exclude registration/login.
   5. Middlevares have been created for exception handling.
   6. Passwords are encrypted by algorithm before entering into the database.
