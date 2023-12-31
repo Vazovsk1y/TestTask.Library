@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace TestTask.WebApi.Validation;
+namespace TestTask.WebApi.Validators;
 
 public class ISBNAttribute : RegularExpressionAttribute
 {

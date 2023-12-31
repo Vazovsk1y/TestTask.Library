@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TestTask.Application.Services;
-using TestTask.Application.Shared;
+using TestTask.Application.Contracts;
 using TestTask.DAL;
 
 namespace TestTask.Application.Implementations.Services;

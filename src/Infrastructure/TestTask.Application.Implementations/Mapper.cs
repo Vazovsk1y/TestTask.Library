@@ -1,4 +1,4 @@
-﻿using TestTask.Application.Shared;
+﻿using TestTask.Application.Contracts;
 using TestTask.Domain.Entities;
 
 namespace TestTask.Application.Implementations;

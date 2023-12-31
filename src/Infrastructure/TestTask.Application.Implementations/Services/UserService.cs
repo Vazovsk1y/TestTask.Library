@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using TestTask.Application.Services;
-using TestTask.Application.Shared;
+using TestTask.Application.Contracts;
 using TestTask.DAL;
 using TestTask.Domain.Entities;
 

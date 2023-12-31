@@ -1,6 +1,6 @@
 ﻿using TestTask.Domain.Entities;
 
-namespace TestTask.Application.Shared;
+namespace TestTask.Application.Contracts;
 
 public record BookDTO(BookId Id, string Title, string ISBN, string? Description, AuthorInfo AuthorInfo, IReadOnlyCollection<GenreInfo> Genres);
 

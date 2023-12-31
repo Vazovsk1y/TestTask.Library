@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using TestTask.WebApi.Validation;
+using TestTask.WebApi.Validators;
 
 namespace TestTask.WebApi.ViewModels;
 

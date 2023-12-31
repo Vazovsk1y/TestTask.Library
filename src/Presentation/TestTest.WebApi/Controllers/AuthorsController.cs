@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using TestTask.Application.Services;
-using TestTask.Application.Shared;
+using TestTask.Application.Contracts;
 
 namespace TestTask.WebApi.Controllers;
 
@@ -17,9 +17,9 @@ public class AuthorsController : BaseController
 	[HttpGet]
 	[SwaggerOperation(Summary = "Get all authors.", Description = "Get a collection of all authors.")]
 	[SwaggerResponse(200, "Returns a collection of AuthorInfo.", typeof(IReadOnlyCollection<AuthorInfo>))]
-	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
-	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
-	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
+	[SwaggerResponse(401, AppConstants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(400, AppConstants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, AppConstants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> GetAllAuthors()
 	{
 		var result = await _authorService.GetAllAsync();

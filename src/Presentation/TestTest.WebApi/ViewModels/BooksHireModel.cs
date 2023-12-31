@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
-using TestTask.WebApi.Validation;
+using TestTask.WebApi.Validators;
 
 namespace TestTask.WebApi.ViewModels;
 
