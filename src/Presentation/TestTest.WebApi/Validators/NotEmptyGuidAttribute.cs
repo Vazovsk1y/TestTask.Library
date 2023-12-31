@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TestTask.WebApi.Validation;
+namespace TestTask.WebApi.Validators;
 
 public class NotEmptyGuidAttribute : ValidationAttribute
 {

@@ -1,6 +1,6 @@
 ﻿using TestTask.Domain.Entities;
 
-namespace TestTask.Application.Shared;
+namespace TestTask.Application.Contracts;
 
 public record BooksHireDTO(UserId UserId, IEnumerable<BookToHireDTO> Books, DateTimeOffset BooksHiredDate);
 

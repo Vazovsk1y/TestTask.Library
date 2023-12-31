@@ -1,31 +1,29 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using TestTask.Application.Implementations.Services;
+using TestTask.DAL;
 
 namespace TestTask.WebApi;
 
 public static class Extensions 
 {
-	private const string Bearer = "Bearer";
-	private static readonly string Description = 
-		$"JWT Authorization header using the {Bearer} scheme. \r\n\r\n Enter '{Bearer}' [space] [your token value].";
-
 	public static IServiceCollection AddSwaggerWithJwtSecurity(this IServiceCollection collection)
 	{
 		return collection.AddSwaggerGen(swagger =>
 		{
 			swagger.EnableAnnotations();
 
-			swagger.AddSecurityDefinition(Bearer, new OpenApiSecurityScheme
+			swagger.AddSecurityDefinition(AppConstants.SwaggerConstants.OpenApiSecurityScheme, new OpenApiSecurityScheme
 			{
-				Name = "Authorization",
+				Name = AppConstants.SwaggerConstants.OpenApiSecuritySchemeName,
 				Type = SecuritySchemeType.ApiKey,
-				Scheme = Bearer,
-				BearerFormat = "JWT",
+				Scheme = AppConstants.SwaggerConstants.OpenApiSecurityScheme,
+				BearerFormat = AppConstants.SwaggerConstants.OpenApiSecuritySchemeBearerFormat,
 				In = ParameterLocation.Header,
-				Description = Description
+				Description = AppConstants.SwaggerConstants.SwaggerJwtAuthorizationDescription
 			});
 
 			swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -36,7 +34,7 @@ public static class Extensions
 						Reference = new OpenApiReference
 						{
 							Type = ReferenceType.SecurityScheme,
-							Id = Bearer
+							Id = AppConstants.SwaggerConstants.OpenApiSecurityScheme
 						}
 					},
 					Array.Empty<string>()
@@ -63,5 +61,12 @@ public static class Extensions
 				IssuerSigningKey = signingKey
 			};
 		});
+	}
+
+	public static void MigrateDatabase(this WebApplication app)
+	{
+		using var scope = app.Services.CreateScope();
+		var context = scope.ServiceProvider.GetRequiredService<TestTaskDbContext>();
+		context.Database.Migrate();
 	}
 }

@@ -1,4 +1,4 @@
-﻿using TestTask.Application.Shared;
+﻿using TestTask.Application.Contracts;
 
 namespace TestTask.Application.Services;
 
