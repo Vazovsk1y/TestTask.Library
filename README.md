@@ -1,4 +1,4 @@
- # TestTask.WebApi
+ # Library
  Brief description - library API service with functions for managing books, authors and user accounts.
  
  ## Table of Contents
