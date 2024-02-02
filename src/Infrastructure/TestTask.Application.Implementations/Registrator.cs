@@ -13,5 +13,7 @@ public static class Registrator
 		.AddScoped<IBookHireService, BookHireService>()
 		.AddScoped<IUserService, UserService>()
 		.AddScoped<IAuthenticationService, AuthenticationService>()
+		.AddHostedService<BookStatusUpdateBackgroudService>()
+		.AddScoped<IClock, Clock>()
 		;
 }
