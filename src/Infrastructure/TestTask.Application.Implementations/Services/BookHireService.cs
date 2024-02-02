@@ -23,8 +23,6 @@ internal class BookHireService : IBookHireService
 			return Response.Failure<IReadOnlyCollection<HiredBookDTO>>(Errors.EntityWithPassedIdIsNotExists(nameof(User)));
 		}
 
-		// TODO validate passed hire date.
-
 		var booksIds = hireDTO.Books.Select(e => e.BookId);
 		var booksToHire = await _dbContext
 			.Books
@@ -67,18 +65,26 @@ internal class BookHireService : IBookHireService
 
 	public async Task<Response> ReturnBooksAsync(BooksReturnDTO returnDTO, CancellationToken cancellationToken = default)
 	{
-		var books = await _dbContext.Books.Where(e => returnDTO.BooksToReturn.Contains(e.Id) && e.BookStatus == BookStatus.Hired).ToListAsync(cancellationToken);
+		var books = await _dbContext
+			.Books
+			.Where(e => returnDTO.BooksToReturn.Contains(e.Id) && e.BookStatus == BookStatus.Hired)
+			.ToListAsync(cancellationToken);
+
 		var unavailableBooks = returnDTO.BooksToReturn.Except(books.Select(e => e.Id));
 		if (unavailableBooks.Any())
 		{
 			return Response.Failure<IReadOnlyCollection<HiredBookDTO>>($"Books with [{string.Join(",", unavailableBooks.Select(e => e.Value))}] ids is not exists or is not hired.");
 		}
 
-		var hireItems = await _dbContext.BookHireItems.Where(e => returnDTO.BooksToReturn.Contains(e.BookId) && !e.IsBookReturned).ToListAsync(cancellationToken);
+		var hireItems = await _dbContext
+			.BookHireItems
+			.Where(e => returnDTO.BooksToReturn.Contains(e.BookId) && !e.IsBookReturned)
+			.ToListAsync(cancellationToken);
+
 		var unavailableHireItems = returnDTO.BooksToReturn.Except(hireItems.Select(e => e.BookId));
 		if (unavailableHireItems.Any())
 		{
-			throw new InvalidOperationException();
+			throw new InvalidOperationException("Appropriate hire items for passed books not found. Inconsistency detected.");
 		}
 
         foreach (var book in books)
