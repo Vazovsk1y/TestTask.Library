@@ -35,9 +35,10 @@ internal class BookStatusUpdateBackgroudService : BackgroundService
             using var transaction = dbContext.Database.BeginTransaction();
             try
             {
+                var currentDate = clock.GetUtcNow();
                 int updatedBooksCount = await dbContext
                     .BookHireItems
-                    .Where(e => e.Book.BookStatus == BookStatus.Hired && clock.GetUtcNow() > e.BookHireExpiryDate)
+                    .Where(e => e.Book.BookStatus == BookStatus.Hired && currentDate > e.BookHireExpiryDate)
                     .Select(e => e.Book)
                     .ExecuteUpdateAsync(setters => setters.SetProperty(e => e.BookStatus, BookStatus.Missed), stoppingToken);
 
