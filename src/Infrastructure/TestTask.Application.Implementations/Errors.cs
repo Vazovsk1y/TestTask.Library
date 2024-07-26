@@ -1,6 +1,4 @@
-﻿using TestTask.Domain.Entities;
-
-namespace TestTask.Application.Implementations;
+﻿namespace TestTask.Application.Implementations;
 
 internal static class Errors
 {

@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using TestTask.Application.Services;
-using TestTask.DAL;
+using TestTask.DAL.SqlServer;
 using TestTask.Domain.Enums;
 
 namespace TestTask.Application.Implementations.Services;

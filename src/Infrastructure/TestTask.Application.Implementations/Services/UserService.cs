@@ -1,8 +1,7 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using TestTask.Application.Services;
 using TestTask.Application.Contracts;
-using TestTask.DAL;
+using TestTask.DAL.SqlServer;
 using TestTask.Domain.Entities;
 
 namespace TestTask.Application.Implementations.Services;

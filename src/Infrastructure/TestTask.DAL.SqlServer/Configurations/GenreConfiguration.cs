@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using TestTask.DAL.SqlServer.Extensions;
 using TestTask.Domain.Entities;
 
-namespace TestTask.DAL.Configurations;
+namespace TestTask.DAL.SqlServer.Configurations;
 
 internal class GenreConfiguration : IEntityTypeConfiguration<Genre>
 {

@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using System.Security.Claims;
 using TestTask.Application.Services;
 using TestTask.Application.Contracts;
-using TestTask.DAL;
+using TestTask.DAL.SqlServer;
 
 namespace TestTask.Application.Implementations.Services;
 

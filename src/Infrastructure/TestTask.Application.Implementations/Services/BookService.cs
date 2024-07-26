@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TestTask.Application.Services;
 using TestTask.Application.Contracts;
-using TestTask.DAL;
+using TestTask.DAL.SqlServer;
 using TestTask.Domain.Entities;
 using TestTask.Domain.Enums;
 

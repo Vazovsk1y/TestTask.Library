@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Application\TestTask.Application\TestTask.Application.csproj" />
-    <ProjectReference Include="..\TestTask.DAL\TestTask.DAL.csproj" />
+    <ProjectReference Include="..\TestTask.DAL.SqlServer\TestTask.DAL.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>
