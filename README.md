@@ -1,82 +1,57 @@
- # TestTask.WebApi
- Brief description - library API service with functions for managing books, authors and user accounts.
- 
- ## Table of Contents
- * [Functionality](#functionality)
- * [Technology Stack](#technology-stack)
- * [Before Running](#before-running)
- * [How to use](#how-to-use)
- * [Notes](#notes)
+# TestTask.Library
+
+Web API for library simulation.
 
 ## Functionality:
 
-For unauthorized users:
-- registration and authorization.
+### For Unauthorized Users:
+- Registration and authorization.
 
-For authorized users:
-- retrieve list of all books.
-- retrieve list of all authors.
-- retrieve list of all genres.
-- retrieve a certain book by its Id or ISBN.
-- adding a new book.
-- change information about an existing book.
-- book deletion.
-- hiring/returning a list of books.
-  
- ## Technology Stack:
- - .Net 7.0
- - Entity Framework Core
- - MS SQL
- - JWTBearer
- - Swagger
+### For Authorized Users:
+- Retrieve a list of all books.
+- Retrieve a list of all authors.
+- Retrieve a list of all genres.
+- Retrieve a specific book by its Id or ISBN.
+- Add a new book.
+- Update information about an existing book.
+- Delete a book.
+- Hire or return a list of books.
+
+## Technology Stack:
+- .NET 7.0
+- Entity Framework Core
+- MS SQL
+- JWT Bearer Auth
+- Swagger
 
 ## Before Running
 
-#### 1. Check out the repository
+### 1. Clone the Repository
 
 Clone this repository to your local machine.
 
-#### 2. Find and open a file `appsettings.json`
+### 2. Update the Configuration File
 
-Change the connection string
-```bash
+Find and open the `appsettings.json` file and update the connection string:
+```json
 "ConnectionStrings": {
-    "DefaultConnection": "YOUR_CONNECTION_STRING"
-  }
+"Default": "YOUR_CONNECTION_STRING"
+},
 ```
-Apply the migrations to your database with the command
-```sh
-$  dotnet ef database update
-```
-Launch the application with the command
-```sh
-$  dotnet run --project .\TestTask.WebApi.csproj --launch-profile https
-```
-#### 3. Go to the application page
-You can go to the application page at this link
 
-https://localhost:7148/swagger/index.html
+### 3. Launch the Application
 
-## How to use
-1. First of all, you need to register.
-2. After you have completed the previous step, you need to obtain your JWT-Token.
-3. After that, you need to copy the JWT-Token and paste it into the "Authorize" window, but don't forget to put the word "Bearer" at the beginning.
-4. Now your account is authorized you can use all features.
-5. Let's add the necessary author.
-6. Next, you need to get the Id of the author you added.
-7. Second, add the necessary genre/s.
-8. Now you can add your book by paste all required properties include genres, authors ids you added before.
-9. After executing try to fetch all existing books where will be added book if the adding request was completed successfully.
+Run the following command to launch the application:
+```sh
+$ dotnet run --project .\TestTask.WebApi.csproj --launch-profile https
+```
 
 ## Notes
-  1. A Clean Architecture/Onion Architecture architecture was chosen as the architecture for this assignment. This architecture includes 4 layers: presentation, application, infrastructure, core layers.
-  2. Services chosed for instead of CQRS approach.
-  3. Value id approach was chosen for guid shell due to more convenience.
-  4. An unauthorized user will get a 401 error when trying to perform any operation exclude registration/login.
-  5. Middlevares have been created for exception handling.
-  6. Passwords are encrypted by algorithm before entering into the database.
-  7. Added swagger annotations for more detailed descriptions of endpoints.
-  8. Also described status codes that are returned after endpoints are executed.
-
-
-  
+1. A Clean/Onion architecture was chosen for this project. This architecture includes four layers: presentation, application, infrastructure, and core.
+2. Services were chosen instead of the CQRS approach.
+3. The Value ID approach was chosen for GUIDs due to its convenience.
+4. Unauthorized users will receive a 401 error when trying to perform any operation other than registration or login.
+5. Middleware has been created for global exception handling.
+6. Passwords are encrypted using an algorithm before being stored in the database.
+7. Swagger annotations have been added for more detailed descriptions of endpoints.
+8. Status codes that are returned after endpoints are executed are also described.
