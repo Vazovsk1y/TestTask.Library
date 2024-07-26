@@ -3,23 +3,23 @@ using TestTask.Application.Services;
 using TestTask.Application.Contracts;
 using TestTask.DAL.SqlServer;
 
-namespace TestTask.Application.Implementations.Services;
+namespace TestTask.Application.Implementation.Services;
 
-internal class AuthorService : IAuthorService
+internal class GenreService : IGenreService
 {
 	private readonly TestTaskDbContext _dbContext;
 
-	public AuthorService(TestTaskDbContext dbContext)
+	public GenreService(TestTaskDbContext dbContext)
 	{
 		_dbContext = dbContext;
 	}
 
-	public async Task<Response<IReadOnlyCollection<AuthorInfo>>> GetAllAsync(CancellationToken cancellationToken = default)
+	public async Task<Response<IReadOnlyCollection<GenreInfo>>> GetAllAsync(CancellationToken cancellationToken = default)
 	{
 		var result = await _dbContext
-			.Authors
+			.Genres
 			.AsNoTracking()
-			.Select(e => new AuthorInfo(e.Id, e.FullName))
+			.Select(e => new GenreInfo(e.Id, e.Title))
 			.ToListAsync(cancellationToken);
 
 		return result;

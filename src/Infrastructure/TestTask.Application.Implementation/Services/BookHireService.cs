@@ -5,7 +5,7 @@ using TestTask.DAL.SqlServer;
 using TestTask.Domain.Entities;
 using TestTask.Domain.Enums;
 
-namespace TestTask.Application.Implementations.Services;
+namespace TestTask.Application.Implementation.Services;
 
 internal class BookHireService : IBookHireService
 {

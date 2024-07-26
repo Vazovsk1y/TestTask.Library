@@ -1,7 +1,7 @@
 ﻿using TestTask.Application.Contracts;
 using TestTask.Domain.Entities;
 
-namespace TestTask.Application.Implementations;
+namespace TestTask.Application.Implementation;
 
 internal static class Mapper
 {

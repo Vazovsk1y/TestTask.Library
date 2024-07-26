@@ -6,15 +6,15 @@ using TestTask.Application.Services;
 using TestTask.DAL.SqlServer;
 using TestTask.Domain.Enums;
 
-namespace TestTask.Application.Implementations.Services;
+namespace TestTask.Application.Implementation.Services;
 
-internal class BookStatusUpdateBackgroudService : BackgroundService
+internal class BookStatusUpdateBackgroundService : BackgroundService
 {
     private readonly IServiceScopeFactory _serviceScopeFactory;
     private readonly TimeSpan _interval = TimeSpan.FromHours(24);
     private readonly ILogger _logger;
 
-    public BookStatusUpdateBackgroudService(IServiceScopeFactory serviceScopeFactory, ILogger<BookStatusUpdateBackgroudService> logger)
+    public BookStatusUpdateBackgroundService(IServiceScopeFactory serviceScopeFactory, ILogger<BookStatusUpdateBackgroundService> logger)
     {
         _serviceScopeFactory = serviceScopeFactory;
         _logger = logger;
@@ -22,7 +22,7 @@ internal class BookStatusUpdateBackgroudService : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        _logger.LogInformation("{ServiceName} started at {UtcNow}.", nameof(BookStatusUpdateBackgroudService), DateTimeOffset.UtcNow);
+        _logger.LogInformation("{ServiceName} started at {UtcNow}.", nameof(BookStatusUpdateBackgroundService), DateTimeOffset.UtcNow);
 
         using var timer = new PeriodicTimer(_interval);
 
@@ -32,7 +32,7 @@ internal class BookStatusUpdateBackgroudService : BackgroundService
             var clock = scope.ServiceProvider.GetRequiredService<IClock>();
             var dbContext = scope.ServiceProvider.GetRequiredService<TestTaskDbContext>();
 
-            using var transaction = dbContext.Database.BeginTransaction();
+            await using var transaction = await dbContext.Database.BeginTransactionAsync(stoppingToken);
             try
             {
                 var currentDate = clock.GetUtcNow();
@@ -42,16 +42,16 @@ internal class BookStatusUpdateBackgroudService : BackgroundService
                     .Select(e => e.Book)
                     .ExecuteUpdateAsync(setters => setters.SetProperty(e => e.BookStatus, BookStatuses.Missed), stoppingToken);
 
-                transaction.Commit();
+                await transaction.CommitAsync(stoppingToken);
                 _logger.LogInformation("{updatedBooksCount} books updated. Transaction commited.", updatedBooksCount);
             }
             catch (Exception ex)
             {
-                transaction.Rollback();
+                await transaction.RollbackAsync(stoppingToken);
                 _logger.LogError(ex, "Book status updating failed at {UtcNow}. Transaction rollbacked.", clock.GetUtcNow());
             }
         }
 
-        _logger.LogInformation("{ServiceName} stopped at {UtcNow}.", nameof(BookStatusUpdateBackgroudService), DateTimeOffset.UtcNow);
+        _logger.LogInformation("{ServiceName} stopped at {UtcNow}.", nameof(BookStatusUpdateBackgroundService), DateTimeOffset.UtcNow);
     }
 }

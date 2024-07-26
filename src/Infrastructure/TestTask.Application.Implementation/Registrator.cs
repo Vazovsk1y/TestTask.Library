@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using TestTask.Application.Implementations.Services;
+using TestTask.Application.Implementation.Services;
 using TestTask.Application.Services;
 
-namespace TestTask.Application.Implementations;
+namespace TestTask.Application.Implementation;
 
 public static class Registrator
 {
@@ -13,7 +13,7 @@ public static class Registrator
 		.AddScoped<IBookHireService, BookHireService>()
 		.AddScoped<IUserService, UserService>()
 		.AddScoped<IAuthenticationService, AuthenticationService>()
-		.AddHostedService<BookStatusUpdateBackgroudService>()
+		.AddHostedService<BookStatusUpdateBackgroundService>()
 		.AddScoped<IClock, Clock>()
 		;
 }

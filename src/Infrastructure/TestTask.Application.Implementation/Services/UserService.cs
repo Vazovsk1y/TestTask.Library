@@ -4,7 +4,7 @@ using TestTask.Application.Contracts;
 using TestTask.DAL.SqlServer;
 using TestTask.Domain.Entities;
 
-namespace TestTask.Application.Implementations.Services;
+namespace TestTask.Application.Implementation.Services;
 
 internal class UserService : IUserService
 {

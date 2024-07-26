@@ -3,7 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using TestTask.Application.Implementations.Services;
+using TestTask.Application.Implementation.Services;
 using TestTask.DAL.SqlServer;
 
 namespace TestTask.WebApi;

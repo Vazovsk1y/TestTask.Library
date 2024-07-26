@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Application", "src\Application\TestTask.Application\TestTask.Application.csproj", "{F884AA4D-17F7-4E9C-832B-0FBF57DBED5E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Application.Implementations", "src\Infrastructure\TestTask.Application.Implementations\TestTask.Application.Implementations.csproj", "{47830B13-CE24-4C19-BE6C-6CC23135B88A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Application.Implementation", "src\Infrastructure\TestTask.Application.Implementation\TestTask.Application.Implementation.csproj", "{47830B13-CE24-4C19-BE6C-6CC23135B88A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3019340B-5D94-435D-A8CC-02945343A618}"
 EndProject

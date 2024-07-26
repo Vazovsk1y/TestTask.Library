@@ -1,10 +1,11 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using System.Globalization;
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using TestTask.Domain.Entities;
 
-namespace TestTask.Application.Implementations.Services;
+namespace TestTask.Application.Implementation.Services;
 
 public static class JwtTokenHelper
 {
@@ -15,7 +16,7 @@ public static class JwtTokenHelper
 		{
 			new Claim(JwtRegisteredClaimNames.Email, user.Email),
 			new Claim(JwtRegisteredClaimNames.Sub, user.Id.Value.ToString()),
-			new Claim(JwtRegisteredClaimNames.Exp, expiredDate.ToString())
+			new Claim(JwtRegisteredClaimNames.Exp, expiredDate.ToString(CultureInfo.InvariantCulture))
 		};
 
 		var signingCredentials = new SigningCredentials(

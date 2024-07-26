@@ -1,4 +1,4 @@
-﻿namespace TestTask.Application.Implementations;
+﻿namespace TestTask.Application.Implementation;
 
 internal static class Errors
 {

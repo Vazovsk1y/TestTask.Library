@@ -4,7 +4,7 @@ using TestTask.Application.Services;
 using TestTask.Application.Contracts;
 using TestTask.DAL.SqlServer;
 
-namespace TestTask.Application.Implementations.Services;
+namespace TestTask.Application.Implementation.Services;
 
 internal class AuthenticationService : IAuthenticationService
 {
@@ -19,7 +19,7 @@ internal class AuthenticationService : IAuthenticationService
 
 	public async Task<Response<Token>> LoginAsync(UserCredentialsDTO userDto, CancellationToken cancellationToken = default)
 	{
-		var user = await _dbContext.Users.SingleOrDefaultAsync(e => e.Email == userDto.Email, cancellationToken);
+		var user = await _dbContext.Users.FirstOrDefaultAsync(e => e.Email == userDto.Email, cancellationToken);
 		if (user is null)
 		{
 			return Response.Failure<Token>(Errors.Auth.InvalidCredentials);

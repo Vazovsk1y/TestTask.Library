@@ -1,7 +1,7 @@
-using TestTask.Application.Implementations;
+using TestTask.Application.Implementation;
 using TestTask.WebApi.Middlewares;
 using TestTask.WebApi;
-using TestTask.Application.Implementations.Services;
+using TestTask.Application.Implementation.Services;
 using TestTask.DAL.SqlServer.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
