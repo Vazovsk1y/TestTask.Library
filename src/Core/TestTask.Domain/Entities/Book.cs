@@ -15,11 +15,9 @@ public class Book : Entity<BookId>
 
 	public required AuthorId AuthorId { get; set; }
 
-	public required BookStatus BookStatus { get; set; }
+	public required BookStatuses BookStatus { get; set; }
 
-	public Author Author { get; set; }
-
-	public Book() : base() { }
+	public Author Author { get; init; } = null!;
 }
 
 

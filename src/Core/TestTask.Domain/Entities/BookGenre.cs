@@ -7,7 +7,7 @@ public class BookGenre
 
 	public required BookId BookId { get; init; }
 
-	public Book Book { get; set; }
+	public Book Book { get; init; }
 
-	public Genre Genre { get; set; }
+	public Genre Genre { get; init; }
 }

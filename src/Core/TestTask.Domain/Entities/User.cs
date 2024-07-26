@@ -4,11 +4,9 @@ namespace TestTask.Domain.Entities;
 
 public class User : Entity<UserId>
 {
-	public required string Email { get; set; }
+	public required string Email { get; init; }
 
-	public required string PasswordHash { get; set; }
-
-	public User() : base() { }
+	public required string PasswordHash { get; init; }
 }
 
 public record UserId(Guid Value) : IValueId<UserId>

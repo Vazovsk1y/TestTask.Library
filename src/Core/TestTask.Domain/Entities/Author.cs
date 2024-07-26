@@ -4,11 +4,9 @@ namespace TestTask.Domain.Entities;
 
 public class Author : Entity<AuthorId>
 {
-	public required string FullName { get; set; }
+	public required string FullName { get; init; }
 
-	public ICollection<Book> Books { get; set; } = new List<Book>();
-
-	public Author() : base() { }
+	public ICollection<Book> Books { get; init; } = new List<Book>();
 }
 
 public record AuthorId(Guid Value) : IValueId<AuthorId>

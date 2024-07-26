@@ -11,13 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Domain", "src\Core
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B8040D5D-8F9D-4B63-B7AC-ABB9869D537A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.DAL", "src\Infrastructure\TestTask.DAL\TestTask.DAL.csproj", "{DD9A7EE4-66A5-4D42-B152-D3F7F1F21284}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.DAL.SqlServer", "src\Infrastructure\TestTask.DAL.SqlServer\TestTask.DAL.SqlServer.csproj", "{DD9A7EE4-66A5-4D42-B152-D3F7F1F21284}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{83A9A5E6-6CF0-4901-8724-776226E899D9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Application", "src\Application\TestTask.Application\TestTask.Application.csproj", "{F884AA4D-17F7-4E9C-832B-0FBF57DBED5E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Application.Implementations", "src\Infrastructure\TestTask.Application.Implementations\TestTask.Application.Implementations.csproj", "{47830B13-CE24-4C19-BE6C-6CC23135B88A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTask.Application.Implementation", "src\Infrastructure\TestTask.Application.Implementation\TestTask.Application.Implementation.csproj", "{47830B13-CE24-4C19-BE6C-6CC23135B88A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3019340B-5D94-435D-A8CC-02945343A618}"
 EndProject

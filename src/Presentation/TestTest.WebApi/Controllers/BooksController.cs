@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using System.Security.Claims;
-using TestTask.Application.Services;
 using TestTask.Application.Contracts;
+using TestTask.Application.Services;
 using TestTask.Domain.Entities;
 using TestTask.WebApi.Validators;
 using TestTask.WebApi.ViewModels;
@@ -43,10 +43,10 @@ public class BooksController : BaseController
 	[HttpGet("{id}")]
 	[SwaggerOperation(Summary = "Get a book by Id.", Description = "Get a book by its unique identifier.")]
 	[SwaggerResponse(200, "Returns a BookDTO.", typeof(BookDTO))]
-	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(401, AppConstants.SwaggerConstants.UnauthorizedMessage)]
 	[SwaggerResponse(404, "If the book with the specified Id is not found.")]
-	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
-	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
+	[SwaggerResponse(400, AppConstants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, AppConstants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> GetBookById([NotEmptyGuid] Guid id)
 	{
 		var result = await _bookService.GetByIdAsync(new BookId(id));
@@ -61,10 +61,10 @@ public class BooksController : BaseController
 	[HttpGet("byISBN/{isbn}")]
 	[SwaggerOperation(Summary = "Get a book by ISBN.", Description = "Get a book by its ISBN.")]
 	[SwaggerResponse(200, "Returns a BookDTO.", typeof(BookDTO))]
-	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(401, AppConstants.SwaggerConstants.UnauthorizedMessage)]
 	[SwaggerResponse(404, "If the book with the specified ISBN is not found.")]
-	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
-	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
+	[SwaggerResponse(400, AppConstants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, AppConstants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> GetBookByISBN([ISBN] string isbn)
 	{
 		var result = await _bookService.GetByISBNAsync(isbn);
@@ -113,10 +113,10 @@ public class BooksController : BaseController
 	[HttpDelete("{id}")]
 	[SwaggerOperation(Summary = "Delete a book by Id.", Description = "Delete a book by its unique identifier.")]
 	[SwaggerResponse(200, "If the book is successfully deleted.")]
-	[SwaggerResponse(401, Constants.SwaggerConstants.UnauthorizedMessage)]
-	[SwaggerResponse(404, Constants.SwaggerConstants.InvalidRequestMessage)]
-	[SwaggerResponse(400, Constants.SwaggerConstants.InvalidRequestMessage)]
-	[SwaggerResponse(500, Constants.SwaggerConstants.InternalServerError)]
+	[SwaggerResponse(401, AppConstants.SwaggerConstants.UnauthorizedMessage)]
+	[SwaggerResponse(404, AppConstants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(400, AppConstants.SwaggerConstants.InvalidRequestMessage)]
+	[SwaggerResponse(500, AppConstants.SwaggerConstants.InternalServerError)]
 	public async Task<IActionResult> DeleteBook([NotEmptyGuid] Guid id)
 	{
 		var result = await _bookService.DeleteAsync(new BookId(id));
