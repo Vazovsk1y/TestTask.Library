@@ -5,13 +5,11 @@ namespace TestTask.Domain.Entities;
 
 public class BooksHireRecord : Entity<BooksHireRecordId>
 {
-	public required UserId UserId { get; set; }
+	public required UserId UserId { get; init; }
 
-	public required DateTimeOffset BooksHireDate { get; set; }
+	public required DateTimeOffset BooksHireDate { get; init; }
 
-	public ICollection<BookHireItem> Books { get; set; } = new List<BookHireItem>();
-
-	public BooksHireRecord() : base() { }
+	public ICollection<BookHireItem> Books { get; init; } = new List<BookHireItem>();
 }
 
 public record BooksHireRecordId(Guid Value) : IValueId<BooksHireRecordId>

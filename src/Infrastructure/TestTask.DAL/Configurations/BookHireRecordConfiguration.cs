@@ -12,7 +12,7 @@ internal class BookHireRecordConfiguration : IEntityTypeConfiguration<BooksHireR
 
 		builder
 			.HasMany(e => e.Books)
-			.WithOne(e => e.BookHireRecord)
-			.HasForeignKey(e => e.BookHireRecordId);
+			.WithOne(e => e.BooksHireRecord)
+			.HasForeignKey(e => e.BooksHireRecordId);
 	}
 }

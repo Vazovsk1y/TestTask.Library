@@ -26,7 +26,7 @@ internal class BookHireService : IBookHireService
 		var booksIds = hireDTO.Books.Select(e => e.BookId);
 		var booksToHire = await _dbContext
 			.Books
-			.Where(e => booksIds.Contains(e.Id) && e.BookStatus == BookStatus.Free)
+			.Where(e => booksIds.Contains(e.Id) && e.BookStatus == BookStatuses.Free)
 			.ToListAsync(cancellationToken);
 
 		var unavailableBooks = booksIds.Except(booksToHire.Select(e => e.Id));
@@ -45,12 +45,12 @@ internal class BookHireService : IBookHireService
         foreach (var book in hireDTO.Books)
         {
 			var bookModel = booksToHire.First(e => e.Id == book.BookId);
-			bookModel.BookStatus = BookStatus.Hired;
+			bookModel.BookStatus = BookStatuses.Hired;
 
 			var hireItem = new BookHireItem
 			{
 				BookHireExpiryDate = hireDTO.BooksHiredDate.Add(book.HireDuration),
-				BookHireRecordId = bookHireRecord.Id,
+				BooksHireRecordId = bookHireRecord.Id,
 				BookId = book.BookId,
 			};
 
@@ -67,7 +67,7 @@ internal class BookHireService : IBookHireService
 	{
 		var books = await _dbContext
 			.Books
-			.Where(e => returnDTO.BooksToReturn.Contains(e.Id) && e.BookStatus == BookStatus.Hired)
+			.Where(e => returnDTO.BooksToReturn.Contains(e.Id) && e.BookStatus == BookStatuses.Hired)
 			.ToListAsync(cancellationToken);
 
 		var unavailableBooks = returnDTO.BooksToReturn.Except(books.Select(e => e.Id));
@@ -89,7 +89,7 @@ internal class BookHireService : IBookHireService
 
         foreach (var book in books)
         {
-			book.BookStatus = BookStatus.Free;
+			book.BookStatus = BookStatuses.Free;
 			var hireItem = hireItems.First(e => e.BookId == book.Id);
 			hireItem.BookReturnDate = returnDTO.BookReturnDate;
 			hireItem.IsBookReturned = true;

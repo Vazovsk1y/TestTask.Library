@@ -24,6 +24,6 @@ internal class BookConfiguration : IEntityTypeConfiguration<Book>
 
 		builder
 			.Property(e => e.BookStatus)
-			.HasConversion(e => e.ToString(), r => Enum.Parse<BookStatus>(r));
+			.HasConversion(e => e.ToString(), r => Enum.Parse<BookStatuses>(r));
 	}
 }

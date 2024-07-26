@@ -1,6 +1,6 @@
 ﻿namespace TestTask.Domain.Enums;
 
-public enum BookStatus
+public enum BookStatuses
 {
 	Unknown,
 	Hired,

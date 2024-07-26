@@ -8,7 +8,7 @@ internal class BookHireItemConfiguration : IEntityTypeConfiguration<BookHireItem
 {
 	public void Configure(EntityTypeBuilder<BookHireItem> builder)
 	{
-		builder.HasKey(e => new { e.BookId, e.BookHireRecordId });
+		builder.HasKey(e => new { e.BookId, BookHireRecordId = e.BooksHireRecordId });
 
 		builder
 			.HasOne(e => e.Book)

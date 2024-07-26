@@ -38,9 +38,9 @@ internal class BookStatusUpdateBackgroudService : BackgroundService
                 var currentDate = clock.GetUtcNow();
                 int updatedBooksCount = await dbContext
                     .BookHireItems
-                    .Where(e => e.Book.BookStatus == BookStatus.Hired && currentDate > e.BookHireExpiryDate)
+                    .Where(e => e.Book.BookStatus == BookStatuses.Hired && currentDate > e.BookHireExpiryDate)
                     .Select(e => e.Book)
-                    .ExecuteUpdateAsync(setters => setters.SetProperty(e => e.BookStatus, BookStatus.Missed), stoppingToken);
+                    .ExecuteUpdateAsync(setters => setters.SetProperty(e => e.BookStatus, BookStatuses.Missed), stoppingToken);
 
                 transaction.Commit();
                 _logger.LogInformation("{updatedBooksCount} books updated. Transaction commited.", updatedBooksCount);

@@ -154,7 +154,7 @@ public static class DataSeeder
 				Title = item.Title,
 				Description = item.Description,
 				AuthorId = _authors[random.Next(0, _authors.Count - 1)].Id,
-				BookStatus = BookStatus.Free,
+				BookStatus = BookStatuses.Free,
 			};
 
 			books.Add(book);

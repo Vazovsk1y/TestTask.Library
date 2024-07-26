@@ -87,7 +87,7 @@ internal class BookService : IBookService
 			Title = addDTO.Title,
 			Description = addDTO.Description,
 			ISBN = addDTO.ISBN,
-			BookStatus = BookStatus.Free,
+			BookStatus = BookStatuses.Free,
 		};
 
 		book.Genres = addDTO.Genres.Select(e => new BookGenre { BookId = book.Id, GenreId = e }).ToList();
